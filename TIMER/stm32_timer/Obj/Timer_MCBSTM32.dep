@@ -1,0 +1,5 @@
+Dependencies for Project 'Timer', Target 'MCBSTM32': (DO NOT MODIFY !)
+F (.\STM32F10x.s)(0x48D87C44)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IDevice\Include--pd "__UVISION_VERSION SETA 525"-o .\obj\stm32f10x.o --depend .\obj\stm32f10x.d)
+F (.\STM32_Init.c)(0x49940AAA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\stm32_timer-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="525" -DUSE_STDPERIPH_DRIVER -DSTM32F1XX -DHSE_VALUE="8000000"-o .\obj\stm32_init.o --omf_browse .\obj\stm32_init.crf --depend .\obj\stm32_init.d)
+F (.\Timer.c)(0x5B43738E)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\stm32_timer-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="525" -DUSE_STDPERIPH_DRIVER -DSTM32F1XX -DHSE_VALUE="8000000"-o .\obj\timer.o --omf_browse .\obj\timer.crf --depend .\obj\timer.d)
+F (.\Abstract.txt)(0x48D87C44)()

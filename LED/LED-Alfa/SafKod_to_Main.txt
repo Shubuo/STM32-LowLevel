@@ -1,0 +1,225 @@
+################################################################
+################################################################
+							LED 
+################################################################
+################################################################
+
+/*
+ *		Istenen Kod 1.katman ama bunlara c dosyalarini kullanmadan kendin ulasmaya çalis
+ *		Yani birinci katmani katmansiz hale getir.
+ */
+////////////////////////////////////////////////////////////////////////////////////////////
+											1.Katman
+////////////////////////////////////////////////////////////////////////////////////////////
+ int main(void)
+{
+	EXS03_initGPIO();//Giris Cikilari Ayarla
+    delay_init(); 	 //Delay icin konfigurasyonlari yap
+	While(1){
+	GPIO_SetBits(GPIOA   , GPIO_Pin_0);
+	  delay_ms(250);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+											2.Katman
+////////////////////////////////////////////////////////////////////////////////////////////
+
+void EXS03_initGPIO(void)
+{
+    GPIO_InitTypeDef GPIO_InitStructure;
+    /* GPIOA-GPIOC Periph clock enable */
+#ifdef STM32F10X_MD
+    /* GPIOA-GPIOC Periph clock enable */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);  // LED, BUTTON GPIO
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);  // LCD GPIO
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);  // LED, BUTTON, BUZZER GPIO
+#elif STM32F2XX
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);  // LED, BUTTON GPIO
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);  // LCD GPIO
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);  // LED, BUTTON, BUZZER GPIO
+#endif
+    /*
+    *********LED1->PA0, LED2->PA1, LED3-> PC2,   LED4 -> PC3 *********
+    */
+#ifdef STM32F2XX
+    GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1 ;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 		//Output
+    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 		// ve PushPull
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_2 | GPIO_Pin_3;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 		//Output
+    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 		// ve PushPull
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+}
+
+ #define HSE_VALUE    ((uint32_t)8000000)	
+ 
+void delay_init(void)
+ {
+  RCC_ClocksTypeDef RCC_ClocksStatus;
+  RCC_GetClocksFreq(&RCC_ClocksStatus);
+  SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);  /* HCLK/8 */  
+  SysTick_ITConfig(DISABLE);
+  delay_fac_us = RCC_ClocksStatus.HCLK_Frequency / 8000000;	// 8Mhz Kristal için
+  delay_fac_ms = RCC_ClocksStatus.HCLK_Frequency / 8000;    // 8Mhz Kristal için  
+ }
+ 
+ 
+ void delay_ms(uint16_t nms)
+{    
+    uint32_t temp = delay_fac_ms * nms;
+
+    if (temp > 0x00ffffff)
+    {
+        temp = 0x00ffffff;
+    }
+    SysTick_SetReload(temp);		             
+    SysTick_CounterCmd(SysTick_Counter_Clear);	 
+    SysTick_CounterCmd(SysTick_Counter_Enable);	 
+    do
+    {
+        Status = SysTick_GetFlagStatus(SysTick_FLAG_COUNT);
+    }while (Status != SET);				         
+    SysTick_CounterCmd(SysTick_Counter_Disable); 
+	SysTick_CounterCmd(SysTick_Counter_Clear);	 
+}
+////////////////////////////////////////////////////////////////////////////////////////////
+											3.Katman
+////////////////////////////////////////////////////////////////////////////////////////////
+
+/***************---------------GPIO---------------****************/
+
+################################################################
+stm32f10x_gpio.c dosyasi
+################################################################
+/**
+  * @brief  Initializes the GPIOx peripheral according to the specified
+  *         parameters in the GPIO_InitStruct.
+  * @param  GPIOx: where x can be (A..G) to select the GPIO peripheral.
+  * @param  GPIO_InitStruct: pointer to a GPIO_InitTypeDef structure that
+  *         contains the configuration information for the specified GPIO peripheral.
+  * @retval None
+  */
+void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
+{
+  uint32_t currentmode = 0x00, currentpin = 0x00, pinpos = 0x00, pos = 0x00;
+  uint32_t tmpreg = 0x00, pinmask = 0x00;
+  /* Check the parameters */
+  assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+  assert_param(IS_GPIO_MODE(GPIO_InitStruct->GPIO_Mode));
+  assert_param(IS_GPIO_PIN(GPIO_InitStruct->GPIO_Pin));  
+  
+  
+  
+  /**
+  * @brief  Sets the selected data port bits.
+  * @param  GPIOx: where x can be (A..G) to select the GPIO peripheral.
+  * @param  GPIO_Pin: specifies the port bits to be written.
+  *   This parameter can be any combination of GPIO_Pin_x where x can be (0..15).
+  * @retval None
+  */
+void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+{
+  /* Check the parameters */
+  assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+  assert_param(IS_GPIO_PIN(GPIO_Pin));
+  
+  GPIOx->BSRR = GPIO_Pin;
+}
+
+
+
+/**
+  * @brief  Clears the selected data port bits.
+  * @param  GPIOx: where x can be (A..G) to select the GPIO peripheral.
+  * @param  GPIO_Pin: specifies the port bits to be written.
+  *   This parameter can be any combination of GPIO_Pin_x where x can be (0..15).
+  * @retval None
+  */
+void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+{
+  /* Check the parameters */
+  assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+  assert_param(IS_GPIO_PIN(GPIO_Pin));
+  
+  GPIOx->BRR = GPIO_Pin;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+											4.Katman
+////////////////////////////////////////////////////////////////////////////////////////////
+
+################################################################			
+stm32f10x.h temel kütüphane
+################################################################
+/** 
+  * @brief General Purpose I/O
+  */
+  typedef struct
+{
+  __IO uint32_t CRL;
+  __IO uint32_t CRH;
+  __IO uint32_t IDR;
+  __IO uint32_t ODR;
+  __IO uint32_t BSRR;
+  __IO uint32_t BRR;
+  __IO uint32_t LCKR;
+} GPIO_TypeDef;  //Typedef burda tanimlanmis
+
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+#define GPIOA_BASE            (APB2PERIPH_BASE + 0x0800)
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+
+
+################################################################
+stm32f10x_gpio.h kütüphanesi
+################################################################
+/** 
+  * @brief  GPIO Init structure definition  
+  */
+typedef struct
+{
+  uint16_t GPIO_Pin;             /*!< Specifies the GPIO pins to be configured.
+                                      This parameter can be any value of @ref GPIO_pins_define */
+
+  GPIOSpeed_TypeDef GPIO_Speed;  /*!< Specifies the speed for the selected pins.
+                                      This parameter can be a value of @ref GPIOSpeed_TypeDef */
+
+  GPIOMode_TypeDef GPIO_Mode;    /*!< Specifies the operating mode for the selected pins.
+                                      This parameter can be a value of @ref GPIOMode_TypeDef */
+}GPIO_InitTypeDef; //InitTypedef Burada
+
+/** @defgroup GPIO_pins_define 
+  * @{
+  */
+
+#define GPIO_Pin_0                 ((uint16_t)0x0001)  /*!< Pin 0 selected */
+#define GPIO_Pin_1                 ((uint16_t)0x0002)  /*!< Pin 1 selected */
+#define GPIO_Pin_2                 ((uint16_t)0x0004)  /*!< Pin 2 selected */
+#define GPIO_Pin_3                 ((uint16_t)0x0008)  /*!< Pin 3 selected */
+#define GPIO_Pin_4                 ((uint16_t)0x0010)  /*!< Pin 4 selected */
+#define GPIO_Pin_5                 ((uint16_t)0x0020)  /*!< Pin 5 selected */
+#define GPIO_Pin_6                 ((uint16_t)0x0040)  /*!< Pin 6 selected */
+#define GPIO_Pin_7                 ((uint16_t)0x0080)  /*!< Pin 7 selected */
+#define GPIO_Pin_8                 ((uint16_t)0x0100)  /*!< Pin 8 selected */
+#define GPIO_Pin_9                 ((uint16_t)0x0200)  /*!< Pin 9 selected */
+#define GPIO_Pin_10                ((uint16_t)0x0400)  /*!< Pin 10 selected */
+#define GPIO_Pin_11                ((uint16_t)0x0800)  /*!< Pin 11 selected */
+#define GPIO_Pin_12                ((uint16_t)0x1000)  /*!< Pin 12 selected */
+#define GPIO_Pin_13                ((uint16_t)0x2000)  /*!< Pin 13 selected */
+#define GPIO_Pin_14                ((uint16_t)0x4000)  /*!< Pin 14 selected */
+#define GPIO_Pin_15                ((uint16_t)0x8000)  /*!< Pin 15 selected */
+#define GPIO_Pin_All               ((uint16_t)0xFFFF)  /*!< All pins selected */
+
+void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);
+void GPIO_StructInit(GPIO_InitTypeDef* GPIO_InitStruct);
+void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+
+//

@@ -1,0 +1,17 @@
+Dependencies for Project 'Blinky', Target 'STM32F100RB Flash': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_ld_vl.s)(0x559D1D82)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x--pd "__UVISION_VERSION SETA 521"--list .\flash\startup_stm32f10x_ld_vl.lst --xref -o .\flash\startup_stm32f10x_ld_vl.o --depend .\flash\startup_stm32f10x_ld_vl.d)
+F (.\system_stm32f10x.c)(0x559D1D82)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="521" -DSTM32F10X_LD_VL-o .\flash\system_stm32f10x.o --omf_browse .\flash\system_stm32f10x.crf --depend .\flash\system_stm32f10x.d)
+I (C:\Keil_v5\ARM\Inc\ST\STM32F10x\stm32f10x.h)(0x559D1930)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559D23DA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x559D23DA)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x559D23DA)
+I (C:\Keil_v5\ARM\Inc\ST\STM32F10x\system_stm32f10x.h)(0x559D1930)
+F (.\Blinky.c)(0x559D1D82)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="521" -DSTM32F10X_LD_VL-o .\flash\blinky.o --omf_browse .\flash\blinky.crf --depend .\flash\blinky.d)
+I (C:\Keil_v5\ARM\Inc\ST\STM32F10x\stm32f10x.h)(0x559D1930)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559D23DA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x559D23DA)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x559D23DA)
+I (C:\Keil_v5\ARM\Inc\ST\STM32F10x\system_stm32f10x.h)(0x559D1930)
+F (.\Abstract.txt)(0x559D1D82)()

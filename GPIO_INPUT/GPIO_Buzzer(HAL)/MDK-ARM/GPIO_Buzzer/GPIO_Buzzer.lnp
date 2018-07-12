@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"gpio_buzzer\startup_stm32f103xb.o"
+"gpio_buzzer\gpio.o"
+"gpio_buzzer\stm32f1xx_it.o"
+"gpio_buzzer\main.o"
+"gpio_buzzer\stm32f1xx_hal_msp.o"
+"gpio_buzzer\stm32f1xx_hal_tim_ex.o"
+"gpio_buzzer\stm32f1xx_hal_rcc_ex.o"
+"gpio_buzzer\stm32f1xx_hal.o"
+"gpio_buzzer\stm32f1xx_hal_cortex.o"
+"gpio_buzzer\stm32f1xx_hal_flash_ex.o"
+"gpio_buzzer\stm32f1xx_hal_gpio_ex.o"
+"gpio_buzzer\stm32f1xx_hal_tim.o"
+"gpio_buzzer\stm32f1xx_hal_dma.o"
+"gpio_buzzer\stm32f1xx_hal_pwr.o"
+"gpio_buzzer\stm32f1xx_hal_flash.o"
+"gpio_buzzer\stm32f1xx_hal_rcc.o"
+"gpio_buzzer\stm32f1xx_hal_gpio.o"
+"gpio_buzzer\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "GPIO_Buzzer\GPIO_Buzzer.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "GPIO_Buzzer.map" -o GPIO_Buzzer\GPIO_Buzzer.axf

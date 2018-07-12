@@ -1,0 +1,5 @@
+Dependencies for Project 'rs232', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x4F588A28)(--cpu ARM7TDMI -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Philips --list "Startup.lst" --xref -o "Startup.o" --depend "Startup.d")
+F (.\main.c)(0x5103C368)(-c --cpu ARM7TDMI -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Philips -o "main.o" --omf_browse "main.crf" --depend "main.d")
+I (C:\Keil\ARM\Inc\Philips\lpc21xx.h)(0x4F588BDC)
+I (C:\Keil\ARM\ARMCC\bin\..\include\string.h)(0x4EB126E6)

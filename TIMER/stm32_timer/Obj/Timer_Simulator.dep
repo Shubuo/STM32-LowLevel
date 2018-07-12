@@ -1,0 +1,12 @@
+Dependencies for Project 'Timer', Target 'Simulator': (DO NOT MODIFY !)
+F (.\STM32F10x.s)(0x48D87C44)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Simulator-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "STM32F10X_MD SETA 1"-o .\obj\stm32f10x.o --depend .\obj\stm32f10x.d)
+F (.\STM32_Init.c)(0x5B43764A)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I .-I.\RTE\_Simulator-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_MD-o .\obj\stm32_init.o --omf_browse .\obj\stm32_init.crf --depend .\obj\stm32_init.d)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\stm32f10x.h)(0x58257EBC)
+F (.\Timer.c)(0x5B437882)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I .-I.\RTE\_Simulator-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_MD-o .\obj\timer.o --omf_browse .\obj\timer.crf --depend .\obj\timer.d)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\stm32f10x.h)(0x58257EBC)
+F (.\STM32F10x_StdPeriph_Driver\inc\stm32f10x_lib.h)(0x514C0EF5)()
+F (.\CMSIS\inc\system_stm32f2xx.h)(0x514C0EF5)()
+F (.\CMSIS\inc\core_cm3.h)(0x514C0EF5)()
+F (.\CMSIS\inc\core_cm3.c)(0x4C0C9ECE)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I .-I.\RTE\_Simulator-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_MD-o .\obj\core_cm3.o --omf_browse .\obj\core_cm3.crf --depend .\obj\core_cm3.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F137E)
+F (.\Abstract.txt)(0x48D87C44)()

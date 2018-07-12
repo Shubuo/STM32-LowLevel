@@ -1,0 +1,21 @@
+*** Creating Trace Output File 'rs232.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"main.o"'
+### ADS-LD Command completed:
+--cpu ARM7TDMI "startup.o" "main.o" 
+--strict --scatter "rs232.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\rs232.map" -o rs232.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'rs232.axf'
+### ADS-LD Command File: 'rs232.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'rs232.lnp', Handle=0x000006D8
+### Writing '.lnp' file
+### ADS-LD Command file 'rs232.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,187 @@
+ARM Notlar
+
+The minimum size for char is 8 bits, 
+the minimum size for short and int is 16 bits, 
+for long it is 32 bits and 
+long long must contain at least 64 bits.
+
+
+for embedded applications, we need to optimally use the resources, make the program code efficient, 
+and satisfy real time constraints, if any. All this is done using the basic constructs, 
+syntaxes, and function libraries of ‘C’.
+}
+
+simple coda p0 ı aktif et söndür
+
+-h dosyasında define lar yapılır ve fonksiyonlar belirlenir.
+-ilgili c dosyasında fonksiyonların içi doldurulur.
+-main de bu dosyalara atıfla fonksiyonlar kullanılır.
+
+ MIPS
+1- Million instructions per second
+CPU'nun saniyede kaç milyon insruction çalıştırdığı ölçer.Benchmark da kullanılır.
+2- microprocessor without interlocked pipeline stages
+ stanford'da geli$tirilmi$ bir cpu mimarisi. i$lemci tasarimini aradaki pipeline a$amalarini elemek suretiyle basitle$tirme amaci gudulmu$. 
+bu cpu sonralari mips r3000 r4000 gibi modellerle piyasaya surulmu$tur. populer risc i$lemcilerdendir.
+arm'a gore daha abarti guc harcayan, genelde modem turu elektrikle calisan cihazlarda tercih edilen, gnu toolchain'inin destekledigi bir islemci.
+ intel'in benimsediği cisc instruction set'inden daha etkili* bir mimari felsefesini benimsemesine rağmen (bkz: risc) 
+ markete 10 yıl kadar geç girmesinden ötürü her zaman intel'in gölgesinde kalmıştır. 
+ 
+ DMIPS - drhystone MIPS
+DMIPS, VAX 11/780 (a particular “1 MIPS” machine)'lik makinaya göre gölreli hızı ifade eder.
+// Eğer 100 MHz CPU, benchmark ı VAX 11/780'e göre 200 kat hızlı yapıyorsa 200 DIMPS makinası olarak belirtilir.CPU'lar muhtelif frekanslarda çalışabildiği için
+Genenlde DIMPS/Mhz şeklinde ifade edilir.
+MIPS simply refers to instruction execution rate for any program, and Dhrystone MIPS are calculated using a specific program.
+MIPS is architecture dependent, DMIPs supposed to be architecture independent.
+Günmüzde ihem MIPS hem DIMPS ile yapılan benchmark testleri artık çok anlamlı değildir.
+
+ There are essentially two aspects of CPU performance:
+1) How many instructions can the CPU execute in a second.
+2) How much actual WORK can the CPU do in one second.
+The first is controlled by CPU architecture, memory speed, and so on.  
+The second has those as variables, 
+and add "how effective is the instruction set at doing the sort of work I want to do." 
+
+There was a set of benchmarks developed  (1972!) called the Whetstone benchmarks that would measure a computers floating point performance.  
+Eventually, people started using computers for things other than math, and realized they needed a similar benchmark for 
+non-floating-point (integer) performance.  This led to the Dhrystone benchmarks
+
+ Harvard Architecture—a type of computer architecture where
+the instructions (program code) and data are stored in separate memory spaces 
+	//Example: Intel 8051 architecture
+ von Neumann Architecture—another type of computer
+architecture where the instructions and data are stored in the same memory space 
+	//Example: ARM, Intel x86 architecture (Intel Pentium, AMD Athlon, etc.)
+
+ Instruction Execution Cycle	
+	-> Fetch instruction -> Decode Instruction -> Execute Instruction and go on.
+	
+ Some of the popular microcontroller architectures
+ Intel 8051
+ Zilog Z80
+ Atmel AVR
+ Microchip PIC
+ ARM
+
+ Memory and Bus Architecture
+ Three masters:
+	 Cortex™-M3 core DCode bus (D-bus) and System bus (S-bus)
+	 GP-DMA1 (general-purpose DMA)
+ Three slaves:
+	 Internal SRAM
+	 Internal Flash memory
+	 AHB to APB bridges (AHB to APBx), which connect all the APB peripherals
+
+ System Architecture Definitions
+Cortex-M3 ICode,DCode ve System Busları var. ICode Flash Arayüzüne bağlanıyor.
+Diğerleri DMA1'den DMA veriyoluyla birlikte önce Bus Matrix'e bağlanıyor, ordan dağılıyor.
+
+ Memory Organization
+	Embedded SRAM ,static sram
+	Bit-banding - Alias region ve bit band region var.Alias regiondaki bir kelime bit-band regiondaki bir bit.
+	stm32 lerde peripheral registerlar ve SRAM Bit-Band region'a map eder.Bu şekilde tek bir vite müdale yapılabilir.
+	Bit-Banding Mapping formula:
+		bit_word_addr = bit_band_base + (byte_offset x 32) + (bit_number × 4)
+	 bit_word_addr is the address of the word in the alias memory region that maps to the targeted bit
+	 bit_band_base is the starting address of the alias region
+	 byte_offset is the number of the byte in the bit-band region that contains the targeted bit
+	 bit_number is the bit position (0-7) of the targeted bit
+
+GPIO Atomic Bit Set or Reset
+	İşlemin interrup edilmemesini sağlar
+	
+ When the I/O Port is programmed as Input:
+	The Output Buffer is disabled
+	The Schmitt Trigger Input is activated
+	The weak pull-up and pull-down resistors are activated or not depending on input configuration (pull-up, pull-down or floating)
+	The data present on the I/O pin is sampled into the Input Data Register every APB2 clock cycle
+	A read access to the Input Data Register obtains the I/O State
+
+ When the I/O Port is programmed as Output:
+	The Output Buffer is enabled:
+	Open Drain Mode: A “0” in the Output register activates the N-MOS while a “1” in the Output register leaves the port in Hi-Z. 
+	(the P-MOS is never activated)
+	Push-Pull Mode: A “0” in the Output register activates the N-MOS while a “1” in the Output register activates the P-MOS
+	The Schmitt Trigger Input is activated.
+	The weak pull-up and pull-down resistors are disabled.
+	The data present on the I/O pin is sampled into the Input Data Register every APB2 clock cycle
+	Read access to Input Data Register gets the I/O state in open drain mode
+	Read access to Output Data register gets last written value in Push-Pull mode
+
+ When the I/O Port is programmed as Alternate Function:
+	Same Specs od Output except
+	*The Output Buffer is driven by the signal coming from the peripheral (alternate function out)
+
+ When the I/O Port is programmed as Analog configuration:
+	The Output Buffer is disabled.
+	The Schmitt Trigger Input is de-activated providing zero consumption for every analog value of the I/O pin. 
+	The output of the Schmitt Trigger is forced to a constant value (0).
+	The weak pull-up and pull-down resistors are disabled.
+	Read access to the Input Data Register gets the value “0”.
+
+	Nested Vectored Interrupt Controller
+	NVIC ve işlemci core arayüz çok yakıncana uç uca bağlanmış bir yapı içindedir, bu sayede düşük gecikmeli kesme sağlar 
+	ve geç ulaşan kesmelerde efektiflik sağlar.
+	NVIC kesmelerin kuyruk zincirini sağlamak için kümelenmiş(iç içe eklenmiş) kesmelerin bilgisini tutar.
+
+	External Interrupt/Event Controller (EXTI)
+	Consists of up to 18 edge detectors for generating requests
+	Each input line can be independently configured
+		Select the type (pulse or pending)
+		Select corresponding trigger event (rising or falling or both)
+		Each line can also be masked independently
+	Pending register maintains the status line of interrupt requests
+	EXTI controller main features are the following:
+		Independent trigger and mask on each interrupt/event line
+		Dedicated status bit for each interrupt line
+		Generation of up to 18 software event/interrupt requests
+		
+	NVIC Functional Description
+Kesme oluşturmak için, kesme hattı yapılandırılmalı ve etkinleştirilmelidir.
+Bu, istenen tetikleme ile iki tetikleme yazmacının programlanması ve kesme maskesi kaydında karşılık gelen bit'e bir "1" yazarak kesme isteğinin etkinleştirilmesiyle yapılır.
+Harici kesme hattında seçilen kenar oluştuğunda, bir kesme isteği oluşturulur.
+Kesme hattına karşılık gelen bekleyen bit de ayarlanır. Bu istek, bekleyen kayıtta ‘1’ yazılarak sıfırlanır.
+
+ Hardware Interrupt/Event Selection
+	To configure the 18 lines as interrupt sources, use the following procedure:
+		Configure the mask bits of the 18 Interrupt lines (EXTI_IMR)
+		Configure the Trigger Selection bits of the Interrupt lines (EXTI_RTSR and EXTI_FTSR)
+		Configure the enable and mask bits that control the NVIC IRQ channel mapped to the External Interrupt Controller (EXTI) so that an interrupt
+		coming from one of the 18 lines can be correctly acknowledged
+	To configure the 18 lines as event sources, use the following procedure:
+		Configure the mask bits of the 18 Event lines (EXTI_EMR)
+		Configure the Trigger Selection bits of the Event lines (EXTI_RTSR and EXTI_FTSR)
+	
+ Software Interrupt/Event Selection
+	The 18 lines can be configured as software interrupt lines as follows:
+		Configure the mask bits of the 18 Interrupt/Event lines (EXTI_IMR,EXTI_EMR)
+		Set the required bit of the software interrupt register (EXTI_SWIER)
+	  
+	SysTick timer (STK)
+	İşlemcinin 24 bit sistem zamanlayıcısı olan SysTick, yeniden yükleme değerinden(reload) sıfıra doğru geri sayım yapar, 
+	bir sonraki saat kenarındaki LOAD yazmacındaki değeri yeniden yükler (sarar) ve ardından sonraki saatlerde geri sayılır.
+	İşlemci hata ayıklamak için durdurulduğunda, sayaç azalmaz.
+
+	Watchdog
+	Watchdog zamanlayıcıları, mikrodenetleyici işlevlerinin düzgün bir şekilde yürütülmesini sağlamak için özel amaçlı zamanlayıcılardır. 
+	İşlemcinin, önceden ayarlanmış zamanlayıcı periyodu sona ermeden önce watchdog zamanlayıcısını yeniden başlatması gerekir ve 
+	bu işlevi watchdog fonksiyonu etkin olduğu sürece tekrar eder. İşlemci için yazılan program, 
+	düzenli olarak watchdog zamanlayıcısını yeniden başlatmak için gerekli ifadeleri içerir. 
+	İşlemci bekçi zamanlayıcıyı yeniden başlatmayı başaramazsa, bu durum bozuk program belleğinden veya başka bir nedenden ötürü büyük bir 
+	işlevsel arıza olduğunu gösterir. Bu durumda, watchdog zamanlayıcısı tüm mikrodenetleyici işlevlerinin başlatılmasını zorlayarak, işlemciyi sıfırlar.
+
+
+	
+Assignments
+Compare the major ARM processor families available today
+from the points of view of processing power, cost, applications.
+(Hint: focus on ARM11 and ARM Cortex series processors)
+
+-ARM Project 1/2 yap
+
+
+
+
+
+Prof. Yasser Mostafa Kadah
+http://www.k-space.org/Class_Info

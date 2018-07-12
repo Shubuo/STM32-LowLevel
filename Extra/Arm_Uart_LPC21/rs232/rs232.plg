@@ -1,0 +1,184 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\ARM_PROJE\rs232\rs232.uvproj
+Project File Date:  01/26/2013
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling Startup.s...
+compiling main.c...
+main.c(4): error:  #7: unrecognized token
+main.c(4): error:  #130: expected a "{"
+main.c(6): error:  #7: unrecognized token
+main.c(6): error:  #29: expected an expression
+main.c(7): error:  #7: unrecognized token
+main.c(7): error:  #29: expected an expression
+main.c(8): error:  #7: unrecognized token
+main.c(8): error:  #29: expected an expression
+main.c(9): error:  #7: unrecognized token
+main.c(9): error:  #29: expected an expression
+main.c(10): error:  #65: expected a ";"
+main.c(15): error:  #7: unrecognized token
+main.c(15): error:  #29: expected an expression
+main.c(22): error:  #7: unrecognized token
+main.c(22): error:  #29: expected an expression
+main.c(23): error:  #7: unrecognized token
+main.c(23): error:  #29: expected an expression
+main.c(24): error:  #65: expected a ";"
+main.c(24): warning:  #940-D: missing return statement at end of non-void function "uart_al"
+main.c(26): error:  #7: unrecognized token
+main.c(26): error:  #169: expected a declaration
+main.c(33): error:  #20: identifier "msj_uzunlugu" is undefined
+main.c(35): error:  #7: unrecognized token
+main.c(35): error:  #29: expected an expression
+main.c(39): warning:  #111-D: statement is unreachable
+main.c(40): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'Target 1'
+assembling Startup.s...
+compiling main.c...
+main.c(4): error:  #7: unrecognized token
+main.c(4): error:  #130: expected a "{"
+main.c(6): error:  #7: unrecognized token
+main.c(6): error:  #29: expected an expression
+main.c(7): error:  #7: unrecognized token
+main.c(7): error:  #29: expected an expression
+main.c(8): error:  #7: unrecognized token
+main.c(8): error:  #29: expected an expression
+main.c(9): error:  #7: unrecognized token
+main.c(9): error:  #29: expected an expression
+main.c(10): error:  #65: expected a ";"
+main.c(15): error:  #7: unrecognized token
+main.c(15): error:  #29: expected an expression
+main.c(22): error:  #7: unrecognized token
+main.c(22): error:  #29: expected an expression
+main.c(23): error:  #7: unrecognized token
+main.c(23): error:  #29: expected an expression
+main.c(24): error:  #65: expected a ";"
+main.c(24): warning:  #940-D: missing return statement at end of non-void function "uart_al"
+main.c(26): error:  #7: unrecognized token
+main.c(26): error:  #169: expected a declaration
+main.c(32): warning:  #223-D: function "uart_hazirla" declared implicitly
+main.c(33): error:  #20: identifier "msj_uzunlugu" is undefined
+main.c(35): error:  #7: unrecognized token
+main.c(35): error:  #29: expected an expression
+main.c(39): warning:  #111-D: statement is unreachable
+main.c(40): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'Target 1'
+assembling Startup.s...
+compiling main.c...
+main.c(14): error:  #7: unrecognized token
+main.c(14): error:  #29: expected an expression
+main.c(21): error:  #7: unrecognized token
+main.c(21): error:  #29: expected an expression
+main.c(22): error:  #7: unrecognized token
+main.c(22): error:  #29: expected an expression
+main.c(23): error:  #65: expected a ";"
+main.c(23): warning:  #940-D: missing return statement at end of non-void function "uart_al"
+main.c(25): error:  #7: unrecognized token
+main.c(25): error:  #169: expected a declaration
+main.c(32): error:  #20: identifier "msj_uzunlugu" is undefined
+main.c(34): error:  #7: unrecognized token
+main.c(34): error:  #29: expected an expression
+main.c(38): warning:  #111-D: statement is unreachable
+main.c(39): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(4): error:  #7: unrecognized token
+main.c(4): error:  #130: expected a "{"
+main.c(6): error:  #7: unrecognized token
+main.c(6): error:  #29: expected an expression
+main.c(7): error:  #7: unrecognized token
+main.c(7): error:  #29: expected an expression
+main.c(8): error:  #7: unrecognized token
+main.c(8): error:  #29: expected an expression
+main.c(9): error:  #7: unrecognized token
+main.c(9): error:  #29: expected an expression
+main.c(10): error:  #65: expected a ";"
+main.c(15): error:  #7: unrecognized token
+main.c(15): error:  #29: expected an expression
+main.c(22): error:  #7: unrecognized token
+main.c(22): error:  #29: expected an expression
+main.c(23): error:  #7: unrecognized token
+main.c(23): error:  #29: expected an expression
+main.c(24): error:  #65: expected a ";"
+main.c(24): warning:  #940-D: missing return statement at end of non-void function "uart_al"
+main.c(26): error:  #7: unrecognized token
+main.c(26): error:  #169: expected a declaration
+main.c(33): error:  #20: identifier "msj_uzunlugu" is undefined
+main.c(35): error:  #7: unrecognized token
+main.c(35): error:  #29: expected an expression
+main.c(39): warning:  #111-D: statement is unreachable
+main.c(40): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(4): error:  #7: unrecognized token
+main.c(4): error:  #130: expected a "{"
+main.c(6): error:  #7: unrecognized token
+main.c(6): error:  #29: expected an expression
+main.c(7): error:  #7: unrecognized token
+main.c(7): error:  #29: expected an expression
+main.c(8): error:  #7: unrecognized token
+main.c(8): error:  #29: expected an expression
+main.c(9): error:  #7: unrecognized token
+main.c(9): error:  #29: expected an expression
+main.c(10): error:  #65: expected a ";"
+main.c(15): error:  #7: unrecognized token
+main.c(15): error:  #29: expected an expression
+main.c(22): error:  #7: unrecognized token
+main.c(22): error:  #29: expected an expression
+main.c(23): error:  #7: unrecognized token
+main.c(23): error:  #29: expected an expression
+main.c(24): error:  #65: expected a ";"
+main.c(24): warning:  #940-D: missing return statement at end of non-void function "uart_al"
+main.c(26): error:  #7: unrecognized token
+main.c(26): error:  #169: expected a declaration
+main.c(33): error:  #20: identifier "msj_uzunlugu" is undefined
+main.c(35): error:  #7: unrecognized token
+main.c(35): error:  #29: expected an expression
+main.c(39): warning:  #111-D: statement is unreachable
+main.c(40): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'Target 1'
+assembling Startup.s...
+compiling main.c...
+main.c(10): warning:  #111-D: statement is unreachable
+main.c(11): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=692 RO-data=16 RW-data=0 ZI-data=1256  
+"rs232.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(4): error:  #7: unrecognized token
+main.c(4): error:  #130: expected a "{"
+main.c(6): error:  #7: unrecognized token
+main.c(6): error:  #29: expected an expression
+main.c(7): error:  #7: unrecognized token
+main.c(7): error:  #29: expected an expression
+main.c(8): error:  #7: unrecognized token
+main.c(8): error:  #29: expected an expression
+main.c(9): error:  #7: unrecognized token
+main.c(9): error:  #29: expected an expression
+main.c(10): error:  #65: expected a ";"
+main.c(16): warning:  #111-D: statement is unreachable
+main.c(17): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(39): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=1060 RO-data=48 RW-data=12 ZI-data=1260  
+"rs232.axf" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+assembling Startup.s...
+compiling main.c...
+main.c(39): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=1060 RO-data=48 RW-data=12 ZI-data=1260  
+"rs232.axf" - 0 Error(s), 1 Warning(s).

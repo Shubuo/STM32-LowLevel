@@ -1,0 +1,5 @@
+--cpu ARM7TDMI "startup.o" "main.o" 
+--strict --scatter "rs232.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\rs232.map" -o rs232.axf

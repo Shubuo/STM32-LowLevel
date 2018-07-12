@@ -1,0 +1,53 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\ARM_PROJE\ilk_arm_projem.uvproj
+Project File Date:  01/20/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+linking...
+Program Size: Code=960 RO-data=32 RW-data=8 ZI-data=1256  
+"ilk_arm_projem.axf" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+assembling Startup.s...
+compiling main.c...
+main.c(76): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=960 RO-data=32 RW-data=8 ZI-data=1256  
+"ilk_arm_projem.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(76): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=960 RO-data=32 RW-data=8 ZI-data=1256  
+"ilk_arm_projem.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(76): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=968 RO-data=32 RW-data=8 ZI-data=1256  
+"ilk_arm_projem.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(76): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=968 RO-data=32 RW-data=8 ZI-data=1256  
+"ilk_arm_projem.axf" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+assembling Startup.s...
+compiling main.c...
+main.c(76): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=968 RO-data=32 RW-data=8 ZI-data=1256  
+"ilk_arm_projem.axf" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+assembling Startup.s...
+compiling main.c...
+main.c(60): warning:  #111-D: statement is unreachable
+main.c(64): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=968 RO-data=32 RW-data=8 ZI-data=1256  
+"ilk_arm_projem.axf" - 0 Error(s), 2 Warning(s).

@@ -1,0 +1,18 @@
+The Blinky project is a simple demo program for the STM 'STM32F100RB' 
+microcontroller using ST STM32-Discovery Evaluation Board, compliant 
+to Cortex Microcontroller Software Interface Standard (CMSIS v1.3).
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL        =  8 MHz
+   - HCLK        = 24 MHz
+
+ - 2 LEDs blink with a fixed speed, determined by SysTick Timer
+     working in interrupt mode
+ - press BUtton USER1 to switch between the LEDs.
+
+The Blinky program is available in different targets:
+  STM32F100RB RAM:   runs from Internal RAM located on chip
+                     (used for target debugging)
+  STM32F100RB Flash: runs from Internal Flash located on chip
+                     (used for production or target debugging)
