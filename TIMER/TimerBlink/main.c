@@ -41,7 +41,7 @@ int main()
 		GPIOC->CRL = 0x3300;								//Output 50Mhz 	 for PC2/PC3
 		
 		TIM3->PSC = DELAY;
-		TIM3->SR  = 0	;
+//		TIM3->SR  = 0	;
 		TIM3->ARR = 1000;			
 		TIM3->CR1 |= TIM_CR1_CEN;
 		TIM3->DIER = TIM_DIER_UIE; // Enable update interrupt (timer level)
@@ -49,9 +49,9 @@ int main()
 		NVIC_EnableIRQ(TIM3_IRQn); // Enable interrupt from TIM3 (NVIC level)
 		
 		while (1){
-			GPIOC->ODR = 0x4;
+			GPIOC->ODR = 0x4;	//LED 4 ON
 			for(msTicks = 0; msTicks < DELAY2; msTicks++);
-			GPIOC->BRR = 0x4;
+			GPIOC->BRR = 0x4; //LED 4 OFF
 			for(msTicks = 0; msTicks < DELAY2; msTicks++);
 
 
@@ -73,7 +73,7 @@ if(TIM3->SR & TIM_SR_UIF) // if UIF flag is set
   {
   TIM3->SR &= ~TIM_SR_UIF; // clear UIF flag
 		if(GPIOA->IDR & 0x2)
-  GPIOC->ODR = 0x8; // toggle LED state
+  GPIOC->ODR = 0x8; // toggle LED 3 state
 		
   }
 }
@@ -95,9 +95,6 @@ if(TIM3->SR & TIM_SR_UIF) // if UIF flag is set
 //=============================================================================
 // End of Program
 //=============================================================================
-
-
-
 
 
 

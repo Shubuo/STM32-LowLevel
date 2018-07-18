@@ -17,7 +17,7 @@ Library Manager: ArmAr.exe V5.06 update 6 (build 750)
 Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
 CPU DLL:         SARMCM3.DLL V5.25.2.0
 Dialog DLL:      DCM.DLL V1.17.1.0
-Target DLL:      UL2CM3.DLL V1.160.12.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
 Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
@@ -28,9 +28,12 @@ Project File Date:  07/12/2018
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling main.c...
+main.c(31): warning:  #69-D: integer conversion resulted in truncation
+   		TIM3->ARR = DELAY2;	// Auto reload value 500 (0.5 sn)
+main.c: 1 warning, 0 errors
 linking...
-Program Size: Code=868 RO-data=252 RW-data=0 ZI-data=1632  
-".\Objects\Timer_PWM.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=752 RO-data=252 RW-data=0 ZI-data=1632  
+".\Objects\Timer_PWM.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 

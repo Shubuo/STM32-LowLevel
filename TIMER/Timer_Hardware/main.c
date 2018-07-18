@@ -20,7 +20,7 @@ int main(void)
 		RCC->APB2ENR = RCC_APB2ENR_AFIOEN | RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPCEN ; //0x15; 
 		/* Enable GPIOA/C/ AFIOEN clock 				 */
 		RCC->APB1ENR = RCC_APB1ENR_TIM3EN ; //0x02 /* Enable TIM3 */		TIM6 kapali gözüküyor
-		GPIOC->CRL = 0xAA00;								//AFIO Push-Pull 2Mhz for PC2/PC3
+		GPIOC->CRL = 0xAA00;							 	//AFIO Push-Pull 2Mhz for PC2/PC3
 
 		AFIO->MAPR = AFIO_MAPR_TIM3_REMAP; // Full TIM3 remap
 

@@ -608,9 +608,9 @@ Image Symbol Table
     __semihosting_library_function           0x08000243   Thumb Code     0  indicate_semi.o(.text)
     SystemInit                               0x0800032d   Thumb Code    78  system_stm32f10x.o(i.SystemInit)
     TIM3_IRQHandler                          0x0800038d   Thumb Code    40  main.o(i.TIM3_IRQHandler)
-    main                                     0x080003c1   Thumb Code   174  main.o(i.main)
-    Region$$Table$$Base                      0x08000488   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080004a8   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x080003c1   Thumb Code   164  main.o(i.main)
+    Region$$Table$$Base                      0x0800047c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800049c   Number         0  anon$$obj.o(Region$$Table)
     msTicks                                  0x20000000   Data           4  main.o(.data)
     __libspace_start                         0x20000004   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000064   Data           0  libspace.o(.bss)
@@ -623,9 +623,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x000004ac, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000004a0, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000004a8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000049c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -691,23 +691,23 @@ Memory Map of the image
     0x0800024c   0x0800024c   0x000000e0   Code   RO         1039    i.SetSysClockTo72   system_stm32f10x.o
     0x0800032c   0x0800032c   0x00000060   Code   RO         1041    i.SystemInit        system_stm32f10x.o
     0x0800038c   0x0800038c   0x00000034   Code   RO            4    i.TIM3_IRQHandler   main.o
-    0x080003c0   0x080003c0   0x000000c8   Code   RO            5    i.main              main.o
-    0x08000488   0x08000488   0x00000020   Data   RO         1240    Region$$Table       anon$$obj.o
+    0x080003c0   0x080003c0   0x000000bc   Code   RO            5    i.main              main.o
+    0x0800047c   0x0800047c   0x00000020   Data   RO         1240    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x080004a8, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x0800049c, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080004a8   0x00000004   Data   RW            6    .data               main.o
+    0x20000000   0x0800049c   0x00000004   Data   RW            6    .data               main.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000004, Load base: 0x080004ac, Size: 0x00000664, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000004, Load base: 0x080004a0, Size: 0x00000664, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000004        -       0x00000060   Zero   RW         1114    .bss                c_w.l(libspace.o)
-    0x20000064   0x080004ac   0x00000004   PAD
+    0x20000064   0x080004a0   0x00000004   PAD
     0x20000068        -       0x00000200   Zero   RW         1029    HEAP                startup_stm32f10x_md.o
     0x20000268        -       0x00000400   Zero   RW         1028    STACK               startup_stm32f10x_md.o
 
@@ -719,12 +719,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       252         38          0          4          0     233066   main.o
+       240         36          0          4          0     233062   main.o
         64         26        236          0       1536        832   startup_stm32f10x_md.o
        328         28          0          0          0       2177   system_stm32f10x.o
 
     ----------------------------------------------------------------------
-       646         92        268          4       1536     236075   Object Totals
+       634         90        268          4       1536     236071   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          0          0          0          0   (incl. Padding)
 
@@ -773,15 +773,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       924        108        268          4       1636     236395   Grand Totals
-       924        108        268          4       1636     236395   ELF Image Totals
-       924        108        268          4          0          0   ROM Totals
+       912        106        268          4       1636     236391   Grand Totals
+       912        106        268          4       1636     236391   ELF Image Totals
+       912        106        268          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1192 (   1.16kB)
+    Total RO  Size (Code + RO Data)                 1180 (   1.15kB)
     Total RW  Size (RW Data + ZI Data)              1640 (   1.60kB)
-    Total ROM Size (Code + RO Data + RW Data)       1196 (   1.17kB)
+    Total ROM Size (Code + RO Data + RW Data)       1184 (   1.16kB)
 
 ==============================================================================
 

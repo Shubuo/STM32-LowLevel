@@ -1,5 +1,44 @@
 ARM Notlar
 
+ ARM Cortex-M development tools
+C/C++ software libraries
+	ARM Cortex libraries:
+		Cortex Microcontroller Software Interface Standard (CMSIS)[83]
+		CMSIS++: a proposal for the next generation CMSIS, written in C++[84]
+		libopencm3 (formerly called libopenstm32)
+		libmaple for STM32F1 chips
+		LPCOpen for NXP LPC chips
+	Alternate C standard libraries:
+		Bionic libc, dietlibc, EGLIBC, glibc, klibc, musl, Newlib, uClibc
+	FAT file system libraries:
+		EFSL,[85] FatFs,[86] Petit FatFs[87]
+	Fixed-point math libraries:
+		libfixmath, fixedptc,[88] FPMLib[89]
+	Encryption libraries:
+		Comparison of TLS implementations
+		wolfSSL
+	Library collections:
+		Alternative libraries for compression, cryptography, databases, graphics, and more.
+Videos
+	ARM Architecture Fundamentals - YouTube
+	ARM University Video introduction - YouTube
+	Embedded C Programming Course with ARM Cortex-M[90] - YouTube
+Further reading
+	Embedded Systems with ARM Cortex-M Microcontrollers in Assembly Language and C; 3rd Edition; Yifeng Zhu; 738 pages; 2017; ISBN 978-0982692660.
+	Designer's Guide to the Cortex-M Processor Family; 2nd Edition; Trevor Martin; 490 pages; 2016; ISBN 978-0081006290.
+	ARM Assembly for Embedded Applications; 1st Edition; Daniel Lewis; 250 pages; 2016; ISBN 978-1483571928.
+	Definitive Guide to the ARM Cortex-M0 and Cortex-M0+ Processors; 2nd Edition; Joseph Yiu; 784 pages; 2015; ISBN 978-0128032770.
+	Definitive Guide to the ARM Cortex-M3 and Cortex-M4 Processors; 3rd Edition; Joseph Yiu; 600 pages; 2013; ISBN 978-0124080829.
+	Digital Signal Processing and Applications Using the ARM Cortex-M4; 1st Edition; Donald Reay; 250 pages; 2014; ISBN 978-1118859049.
+	Embedded Systems: Introduction to ARM Cortex-M Microcontrollers; 5th Edition; Jonathan Valvano; 506 pages; 2012; ISBN 978-1477508992.
+	Assembly Language Programming: ARM Cortex-M3; 1st Edition; Vincent Mahout; 256 pages; 2012; ISBN 978-1848213296.
+		
+arm.com/university
+Accreditaion arm.com/aae //arm accredited engineer
+	ComputerBasedTesting(CBT)
+	Multiple-Exams
+	Industry-wide Standard
+		
 The minimum size for char is 8 bits, 
 the minimum size for short and int is 16 bits, 
 for long it is 32 bits and 
