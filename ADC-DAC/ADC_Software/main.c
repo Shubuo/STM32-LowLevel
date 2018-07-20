@@ -30,10 +30,10 @@ unsigned int adc_read(unsigned char channel)
 //ADC1 Initialize - routine example by STM - Core - Adresses :
 
 //__INLINE static void ADC1_Config_free(void) {
-//  //ADC_InitStructure.ADC_Mode = ADC_Mode_Independent; 0B0000: Independent mode
+//  //ADC_InitStructure.ADC_Mode = ADC_Mode_Independent; //0: Independent mode
 //  ADC1->CR1 = 0x00000000;
 //  //ADC_InitStructure.ADC_ScanConvMode = Disable;
-//  ADC1->CR1 |= (0 < < 8); // of course (0SQR3 = 0x00000008; //Kanal 8 als 1 Conversion
+//  ADC1->CR1 |= (0 < < 8); // of course (SQR3 = 0x00000008; //Kanal 8 als 1 Conversion
 //  ADC1->SMPR2 |= (5 < CR2 |= (0 < CR2 |= (1 < CR2 |= (1 < CR2)& (1 < 0);
 
 //  // Start ADC1 calibration
@@ -51,5 +51,4 @@ unsigned int adc_read(unsigned char channel)
 ////ADC_InitStructure.ADC_ScanConvMode = Disable;
 //ADC1->CR1 |= (0<CR2 |= (0<CR2 |= (1<CR2 |= (7<CR2 |= (0<CR1 |= (0<SQR1 = 0x00100000;
 //ADC1->SQR3 = 0x00000008; //Kanal 8 als 1 Conversion
-//ADC1->SMPR2 |= (5<CR2 |= (0<CR2 |= (1<CR2 |= (1<CR2)& (1<0);
 
