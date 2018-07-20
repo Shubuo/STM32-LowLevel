@@ -1,6 +1,6 @@
 
 #include "exs03.h"
-/***************** Veri Tanýmlamalarý **********************/
+/***************** Veri TanÄ±mlamalarÄ± **********************/
 
 
 /*******************Giris - Cikis Pinleri Konfigurasyonlari*********************/

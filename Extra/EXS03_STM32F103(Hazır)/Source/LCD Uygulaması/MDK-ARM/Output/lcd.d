@@ -2,10 +2,11 @@
 .\output\lcd.o: ..\..\EXPKITS\lcd.h
 .\output\lcd.o: ..\..\EXPKITS\delay.h
 .\output\lcd.o: ..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h
-.\output\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm3.h
+.\output\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm3.h
 .\output\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\output\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h
-.\output\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h
+.\output\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\output\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\output\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
 .\output\lcd.o: ..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h
 .\output\lcd.o: ..\inc\stm32f10x_conf.h
 .\output\lcd.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

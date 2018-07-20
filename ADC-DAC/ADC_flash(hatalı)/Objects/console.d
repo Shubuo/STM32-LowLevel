@@ -1,0 +1,12 @@
+.\objects\console.o: stm32_unict_lib\src\console.c
+.\objects\console.o: .\stm32_unict_lib\inc\console.h
+.\objects\console.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\stm32f10x.h
+.\objects\console.o: .\RTE\_Target_1\RTE_Components.h
+.\objects\console.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm3.h
+.\objects\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\console.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\objects\console.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\objects\console.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+.\objects\console.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\system_stm32f10x.h
+.\objects\console.o: .\stm32_unict_lib\inc\usart.h
+.\objects\console.o: .\stm32_unict_lib\inc\gpio.h

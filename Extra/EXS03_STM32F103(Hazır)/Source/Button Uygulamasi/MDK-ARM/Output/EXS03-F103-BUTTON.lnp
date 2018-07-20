@@ -30,6 +30,6 @@
 ".\output\lcd.o"
 ".\output\startup_stm32f10x_md.o"
 --library_type=microlib --strict --scatter ".\Output\EXS03-F103-BUTTON.sct"
---summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Output\EXS03-F103-BUTTON.map" -o .\Output\EXS03-F103-BUTTON.axf

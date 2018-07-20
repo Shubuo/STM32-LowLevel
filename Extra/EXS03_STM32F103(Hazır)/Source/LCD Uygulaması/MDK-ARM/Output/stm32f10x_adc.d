@@ -1,10 +1,11 @@
 .\output\stm32f10x_adc.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c
 .\output\stm32f10x_adc.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
 .\output\stm32f10x_adc.o: ..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h
-.\output\stm32f10x_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm3.h
+.\output\stm32f10x_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm3.h
 .\output\stm32f10x_adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\output\stm32f10x_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h
-.\output\stm32f10x_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h
+.\output\stm32f10x_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\output\stm32f10x_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\output\stm32f10x_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
 .\output\stm32f10x_adc.o: ..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h
 .\output\stm32f10x_adc.o: ..\inc\stm32f10x_conf.h
 .\output\stm32f10x_adc.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

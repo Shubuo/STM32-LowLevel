@@ -1,0 +1,205 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: burak yörük, -, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.25.2.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DCM.DLL V1.17.1.0
+Target DLL:      UL2CM3.DLL V1.160.12.0
+Dialog DLL:      TCM.DLL V1.35.1.0
+ 
+<h2>Project:</h2>
+E:\1-üniversite\2-ÝÞ\Skysens\Proje\ADC-DAC\ADC_flash\ADC_flash.uvprojx
+Project File Date:  07/20/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+compiling console.c...
+stm32_unict_lib\src\console.c(16): error:  #136: struct "<unnamed>"  has no field "AHB1ENR"
+      RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+stm32_unict_lib\src\console.c(16): error:  #20: identifier "RCC_AHB1ENR_GPIOAEN" is undefined
+      RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+stm32_unict_lib\src\console.c(19): error:  #136: struct "<unnamed>"  has no field "MODER"
+      GPIO_ALTERNATE(GPIOA, 2);
+stm32_unict_lib\src\console.c(19): error:  #136: struct "<unnamed>"  has no field "MODER"
+      GPIO_ALTERNATE(GPIOA, 2);
+stm32_unict_lib\src\console.c(20): error:  #136: struct "<unnamed>"  has no field "OSPEEDR"
+      GPIO_SPEED_LOW(GPIOA, 2);
+stm32_unict_lib\src\console.c(20): error:  #136: struct "<unnamed>"  has no field "OSPEEDR"
+      GPIO_SPEED_LOW(GPIOA, 2);
+stm32_unict_lib\src\console.c(21): error:  #136: struct "<unnamed>"  has no field "OTYPER"
+      GPIO_PUSH_PULL(GPIOA, 2);
+stm32_unict_lib\src\console.c(22): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+      GPIO_NO_PUPD(GPIOA, 2);
+stm32_unict_lib\src\console.c(22): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+      GPIO_NO_PUPD(GPIOA, 2);
+stm32_unict_lib\src\console.c(23): error:  #136: struct "<unnamed>"  has no field "AFR"
+      GPIO_AFL(GPIOA, 2, AF_USART1_2);
+stm32_unict_lib\src\console.c(23): error:  #136: struct "<unnamed>"  has no field "AFR"
+      GPIO_AFL(GPIOA, 2, AF_USART1_2);
+stm32_unict_lib\src\console.c(26): error:  #136: struct "<unnamed>"  has no field "MODER"
+      GPIO_ALTERNATE(GPIOA, 3);
+stm32_unict_lib\src\console.c(26): error:  #136: struct "<unnamed>"  has no field "MODER"
+      GPIO_ALTERNATE(GPIOA, 3);
+stm32_unict_lib\src\console.c(27): error:  #136: struct "<unnamed>"  has no field "OSPEEDR"
+      GPIO_SPEED_LOW(GPIOA, 3);
+stm32_unict_lib\src\console.c(27): error:  #136: struct "<unnamed>"  has no field "OSPEEDR"
+      GPIO_SPEED_LOW(GPIOA, 3);
+stm32_unict_lib\src\console.c(28): error:  #136: struct "<unnamed>"  has no field "OTYPER"
+      GPIO_PUSH_PULL(GPIOA, 3);
+stm32_unict_lib\src\console.c(29): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+      GPIO_NO_PUPD(GPIOA, 3);
+stm32_unict_lib\src\console.c(29): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+      GPIO_NO_PUPD(GPIOA, 3);
+stm32_unict_lib\src\console.c(30): error:  #136: struct "<unnamed>"  has no field "AFR"
+      GPIO_AFL(GPIOA, 3, AF_USART1_2);
+stm32_unict_lib\src\console.c(30): error:  #136: struct "<unnamed>"  has no field "AFR"
+      GPIO_AFL(GPIOA, 3, AF_USART1_2);
+stm32_unict_lib\src\console.c: 0 warnings, 20 errors
+compiling adc.c...
+stm32_unict_lib\src\adc.c(20): error:  #136: struct "<unnamed>"  has no field "MODER"
+  	GPIO_ANALOG(port, pin);
+stm32_unict_lib\src\adc.c(20): error:  #136: struct "<unnamed>"  has no field "MODER"
+  	GPIO_ANALOG(port, pin);
+stm32_unict_lib\src\adc.c: 0 warnings, 2 errors
+compiling adc_flash.c...
+adc_flash.c(13): warning:  #951-D: return type of function "main" must be "int"
+  void main(void)
+adc_flash.c: 1 warning, 0 errors
+compiling display.c...
+compiling syscalls.c...
+stm32_unict_lib\src\syscalls.c(5): error:  #5: cannot open source input file "_ansi.h": No such file or directory
+  #include <_ansi.h>
+stm32_unict_lib\src\syscalls.c: 0 warnings, 1 error
+compiling gpio.c...
+stm32_unict_lib\src\gpio.c(13): error:  #136: struct "<unnamed>"  has no field "AHB1ENR"
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+stm32_unict_lib\src\gpio.c(13): error:  #20: identifier "RCC_AHB1ENR_GPIOAEN" is undefined
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+stm32_unict_lib\src\gpio.c(15): error:  #136: struct "<unnamed>"  has no field "AHB1ENR"
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+stm32_unict_lib\src\gpio.c(15): error:  #20: identifier "RCC_AHB1ENR_GPIOBEN" is undefined
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+stm32_unict_lib\src\gpio.c(17): error:  #136: struct "<unnamed>"  has no field "AHB1ENR"
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+stm32_unict_lib\src\gpio.c(17): error:  #20: identifier "RCC_AHB1ENR_GPIOCEN" is undefined
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+stm32_unict_lib\src\gpio.c(19): error:  #136: struct "<unnamed>"  has no field "AHB1ENR"
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
+stm32_unict_lib\src\gpio.c(19): error:  #20: identifier "RCC_AHB1ENR_GPIODEN" is undefined
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
+stm32_unict_lib\src\gpio.c(21): error:  #136: struct "<unnamed>"  has no field "AHB1ENR"
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOEEN;
+stm32_unict_lib\src\gpio.c(21): error:  #20: identifier "RCC_AHB1ENR_GPIOEEN" is undefined
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOEEN;
+stm32_unict_lib\src\gpio.c(22): error:  #20: identifier "GPIOH" is undefined
+  	else if (gpio == GPIOH)
+stm32_unict_lib\src\gpio.c(23): error:  #136: struct "<unnamed>"  has no field "AHB1ENR"
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOHEN;
+stm32_unict_lib\src\gpio.c(23): error:  #20: identifier "RCC_AHB1ENR_GPIOHEN" is undefined
+  		RCC->AHB1ENR |= RCC_AHB1ENR_GPIOHEN;
+stm32_unict_lib\src\gpio.c(28): error:  #136: struct "<unnamed>"  has no field "MODER"
+  	GPIO_INPUT(gpio,pin);
+stm32_unict_lib\src\gpio.c(28): error:  #136: struct "<unnamed>"  has no field "MODER"
+  	GPIO_INPUT(gpio,pin);
+stm32_unict_lib\src\gpio.c(29): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+  	GPIO_NO_PUPD(gpio,pin);
+stm32_unict_lib\src\gpio.c(29): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+  	GPIO_NO_PUPD(gpio,pin);
+stm32_unict_lib\src\gpio.c(30): error:  #136: struct "<unnamed>"  has no field "OSPEEDR"
+  	GPIO_SPEED_HIGH(gpio,pin);
+stm32_unict_lib\src\gpio.c(30): error:  #136: struct "<unnamed>"  has no field "OSPEEDR"
+  	GPIO_SPEED_HIGH(gpio,pin);
+stm32_unict_lib\src\gpio.c(35): error:  #136: struct "<unnamed>"  has no field "MODER"
+  	GPIO_OUTPUT(gpio,pin);
+stm32_unict_lib\src\gpio.c(35): error:  #136: struct "<unnamed>"  has no field "MODER"
+  	GPIO_OUTPUT(gpio,pin);
+stm32_unict_lib\src\gpio.c(36): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+  	GPIO_NO_PUPD(gpio,pin);
+stm32_unict_lib\src\gpio.c(36): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+  	GPIO_NO_PUPD(gpio,pin);
+stm32_unict_lib\src\gpio.c(37): error:  #136: struct "<unnamed>"  has no field "OTYPER"
+  	GPIO_PUSH_PULL(gpio,pin);
+stm32_unict_lib\src\gpio.c(38): error:  #136: struct "<unnamed>"  has no field "OSPEEDR"
+  	GPIO_SPEED_HIGH(gpio,pin);
+stm32_unict_lib\src\gpio.c(38): error:  #136: struct "<unnamed>"  has no field "OSPEEDR"
+  	GPIO_SPEED_HIGH(gpio,pin);
+stm32_unict_lib\src\gpio.c(43): error:  #136: struct "<unnamed>"  has no field "MODER"
+  	GPIO_ALTERNATE(gpio,pin);
+stm32_unict_lib\src\gpio.c(43): error:  #136: struct "<unnamed>"  has no field "MODER"
+  	GPIO_ALTERNATE(gpio,pin);
+stm32_unict_lib\src\gpio.c(44): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+  	GPIO_NO_PUPD(gpio,pin);
+stm32_unict_lib\src\gpio.c(44): error:  #136: struct "<unnamed>"  has no field "PUPDR"
+  	GPIO_NO_PUPD(gpio,pin);
+stm32_unict_lib\src\gpio.c: 0 warnings, 30 errors
+compiling system_init.c...
+stm32_unict_lib\src\system_init.c(42): error:  #20: identifier "RCC_APB1LPENR_PWRLPEN" is undefined
+      RCC->APB1ENR |= RCC_APB1LPENR_PWRLPEN;
+stm32_unict_lib\src\system_init.c(44): error:  #20: identifier "PWR_CR_VOS_1" is undefined
+      PWR->CR |= PWR_CR_VOS_1;
+stm32_unict_lib\src\system_init.c(68): error:  #136: struct "<unnamed>"  has no field "PLLCFGR"
+      RCC->PLLCFGR = (uint32_t)((uint32_t)0x20000000 | (uint32_t)(16 << 0) | (uint32_t)(336 << 6) |
+stm32_unict_lib\src\system_init.c(69): error:  #20: identifier "RCC_PLLCFGR_PLLP_0" is undefined
+                                RCC_PLLCFGR_PLLP_0 | (uint32_t)(7 << 24));
+stm32_unict_lib\src\system_init.c(82): error:  #20: identifier "FLASH_ACR_ICEN" is undefined
+      FLASH->ACR |= FLASH_ACR_ICEN | FLASH_ACR_PRFTEN | FLASH_ACR_LATENCY_2WS;
+stm32_unict_lib\src\system_init.c(82): error:  #20: identifier "FLASH_ACR_PRFTEN" is undefined
+      FLASH->ACR |= FLASH_ACR_ICEN | FLASH_ACR_PRFTEN | FLASH_ACR_LATENCY_2WS;
+stm32_unict_lib\src\system_init.c(82): error:  #20: identifier "FLASH_ACR_LATENCY_2WS" is undefined
+      FLASH->ACR |= FLASH_ACR_ICEN | FLASH_ACR_PRFTEN | FLASH_ACR_LATENCY_2WS;
+stm32_unict_lib\src\system_init.c: 0 warnings, 7 errors
+compiling systick.c...
+compiling timers.c...
+assembling startup_stm32f10x_md.s...
+compiling usart.c...
+compiling system_stm32f10x.c...
+".\Objects\ADC_flash.axf" - 60 Error(s), 1 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.1.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.2.0.pack
+                Keil.STM32F1xx_DFP.2.2.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103R8
+  .\RTE\_Target_1
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.1.1
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
