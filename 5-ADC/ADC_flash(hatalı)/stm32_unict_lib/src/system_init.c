@@ -39,9 +39,9 @@ void SystemInit(void)
 #endif
 
     /* Enable Power Control clock */
-    RCC->APB1ENR |= RCC_APB1LPENR_PWRLPEN;
+    RCC->APB1ENR |= RCC_APB1ENR_PWREN ;
     /* Regulator voltage scaling output selection: Scale 2 */
-    PWR->CR |= PWR_CR_VOS_1;
+    PWR->CR |= PWR_CR_PLS_2V2;
 
     /* Wait until HSI ready */
     while ((RCC->CR & RCC_CR_HSIRDY) == 0);
@@ -65,8 +65,8 @@ void SystemInit(void)
      * PLLP = 4
      * PLLQ = 7
      */
-    RCC->PLLCFGR = (uint32_t)((uint32_t)0x20000000 | (uint32_t)(16 << 0) | (uint32_t)(336 << 6) |
-                              RCC_PLLCFGR_PLLP_0 | (uint32_t)(7 << 24));
+//    RCC->PLLCFGR = (uint32_t)((uint32_t)0x20000000 | (uint32_t)(16 << 0) | (uint32_t)(336 << 6) |
+//                              RCC_PLLCFGR_PLLP_0 | (uint32_t)(7 << 24));
 
     /* PLL On */
     RCC->CR |= RCC_CR_PLLON;
@@ -79,10 +79,10 @@ void SystemInit(void)
      * enable prefetch
      * set latency to 2WS (3 CPU cycles)
      */
-    FLASH->ACR |= FLASH_ACR_ICEN | FLASH_ACR_PRFTEN | FLASH_ACR_LATENCY_2WS;
+    FLASH->ACR |= FLASH_ACR_HLFCYA | FLASH_ACR_PRFTBE | FLASH_ACR_LATENCY_2;  //FLASH_ACR_ICEN | FLASH_ACR_PRFTEN | FLASH_ACR_LATENCY_2WS;
 
     /* Check flash latency */
-    if ((FLASH->ACR & FLASH_ACR_LATENCY) != FLASH_ACR_LATENCY_2WS) {
+    if ((FLASH->ACR & FLASH_ACR_LATENCY) != FLASH_ACR_LATENCY_2) {
         SystemInitError(SYSTEM_INIT_ERROR_FLASH);
     }
 

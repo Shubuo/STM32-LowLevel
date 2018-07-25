@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'ADC_software' 
+ * Project: 'ADC_Software' 
  * Target:  'Target 1' 
  */
 

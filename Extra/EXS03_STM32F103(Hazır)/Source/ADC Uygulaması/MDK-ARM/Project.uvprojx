@@ -546,11 +546,6 @@
               <FileType>1</FileType>
               <FilePath>..\..\EXPKITS\lcd.c</FilePath>
             </File>
-            <File>
-              <FileName>main_LL.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main_LL.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
