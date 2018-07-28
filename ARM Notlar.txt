@@ -209,7 +209,10 @@ Kesme hattına karşılık gelen bekleyen bit de ayarlanır. Bu istek, bekleyen 
 	İşlemci bekçi zamanlayıcıyı yeniden başlatmayı başaramazsa, bu durum bozuk program belleğinden veya başka bir nedenden ötürü büyük bir 
 	işlevsel arıza olduğunu gösterir. Bu durumda, watchdog zamanlayıcısı tüm mikrodenetleyici işlevlerinin başlatılmasını zorlayarak, işlemciyi sıfırlar.
 
-
+hex değerlerle yazmak op-code 
+	
+	DAC
+	http://www.mcu-turkey.com/stm32f4-discovery-kitimizde-dac-kullanimi/
 	
 Assignments
 Compare the major ARM processor families available today

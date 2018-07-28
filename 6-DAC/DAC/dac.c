@@ -16,7 +16,7 @@ int main()
 	{
 		
   DAC->DHR12R1 = j&0xfff;  						//channel 1
-	DAC->DHR12R2 = 0xfff - (j&0xfff);		//channel2
+	DAC->DHR12R2 = 0xfff - (j&0xfff);		//channel 2
 	j=(j+1)&0xfff;
 	}
 	

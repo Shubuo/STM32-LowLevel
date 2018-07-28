@@ -31,14 +31,16 @@ int main(void)
 { 
 	RCC->APB2ENR |= (1UL << 2);   	/* Enable GPIOA clock  */
 	RCC->APB2ENR |=  1 <<  4;   		/* Enable GPIOC clock  */
- 
+ 	RCC->APB1ENR |=  1 <<  29;   		/* Enable DAC clock  */
+ 	RCC->APB1ENR |=  1 <<  4;   		/* Enable TIM6 clock  */
+
  GPIOA->CRL   = 0x33;  		//0/1SET 
  GPIOC->CRL   = 0x3304;   //2/3SET, 0 floating input
 	unsigned long int sayac = 50000; //(153 de yaniyor)
 	
  for(;;) 
  { 
-	while (sayac--); 
+	while (sayac--){}; 
 	 sayac = 50000;
  //adc_1=adc_read(1);  //if(adc_1>2048 && adc_2>2048)
  adc_1=adc_read(0); 
