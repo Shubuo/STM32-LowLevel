@@ -51,7 +51,7 @@ int main(void)
 	
 	lcd_clear();
  	lcd_yaz("Gonderiliyor...");
-  lcd_gotoxy(2,1);
+ 	lcd_gotoxy(2,1);
 
 	EXS03_initUSART();
 	printf("0");
