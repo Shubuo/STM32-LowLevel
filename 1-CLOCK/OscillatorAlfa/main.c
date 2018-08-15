@@ -34,10 +34,10 @@ int main()
 	
 	
 	
-	RCC->APB2ENR |=  1 <<  4;                    /* Enable GPIOC clock          */
-  GPIOC->CRH   &= 0xFFFFFF00;                  /* Configure the GPIO for LEDs */
-  GPIOC->CRH   |= 0x00000033;                  /* Configure the GPIO for LEDs */
-	
+	RCC->APB2ENR |=  RCC_APB2ENR_IOPCEN;  //1 <<  4;                    /* Enable GPIOC clock          */
+  GPIOC->CRL   |=  GPIO_CRL_MODE2 ;// GPIO_CRL_CNF -> 00 ;   /* Configure the GPIO for LEDs */
+  GPIOC->ODR	|= GPIO_ODR_ODR2;  // (1 << 2) | 0x04;
+
 	
 	while(1);
 

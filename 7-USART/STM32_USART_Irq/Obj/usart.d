@@ -1,0 +1,11 @@
+.\obj\usart.o: Usart.c
+.\obj\usart.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\stm32f10x.h
+.\obj\usart.o: .\RTE\_MCBSTM32\RTE_Components.h
+.\obj\usart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm3.h
+.\obj\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\usart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\obj\usart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\obj\usart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+.\obj\usart.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\system_stm32f10x.h
+.\obj\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\usart.o: STM32_Init.h

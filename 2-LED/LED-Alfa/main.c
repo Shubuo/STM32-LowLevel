@@ -150,7 +150,6 @@ while(1){
 //	
 	//GPIOA->BSRR |= (led_mask[num] << 16);
 	
-while(1);
 }
 	
 

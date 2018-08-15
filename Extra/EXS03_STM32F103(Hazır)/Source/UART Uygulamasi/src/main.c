@@ -54,7 +54,7 @@ int main(void)
  	lcd_gotoxy(2,1);
 
 	EXS03_initUSART();
-	printf("0");
+//	printf("0");
 	EXS03_configADC(LDR_CH);
    
 		/* Sonsuz Dongu */
@@ -65,7 +65,7 @@ int main(void)
    {
     AD_value=ADC_GetConversionValue(ADC1);
 		 AD_value=4095-AD_value;
-		printf("%d\r\n",AD_value);
+//		printf("%d\r\n",AD_value);
 		sprintf(adc_bilgisi,"  LDR = %4d",AD_value);
 		lcd_gotoxy(2,1);
 		lcd_yaz(adc_bilgisi);

@@ -222,6 +222,10 @@ from the points of view of processing power, cost, applications.
 -ARM Project 1/2 yap
 
 
+RTC
+
+F103 serisinde herşey saniyeler üzerinden yapılıyor, sadece tarih bilgilerini(gün/ay/yıl) açılışta backup registerlerinden okuyup ram'de tutuyorsun (ilk çalışmada/seferinde backup registerlerine tarihi senin girmen gerekiyor), saat bilgileri ise doğrudan stm32 rtc counter üzerinden hesaplıyorsun. Gün/ay/yıl değişince hem ram'deti saat ve tarihi hemde backup registerlerinini de güncellemen gerekiyor.
+
 
 
 
