@@ -1,55 +1,97 @@
+
+/*********************************
+*
+*		USART LCD ve LED Uygulamasi
+*
+**********************************/
+
 #include "stm32f10x.h"                  // Device header
 #include "delay.h"
 #include "lcd.h"
 #include <stdio.h>
 #include "usart.h"
-
-uint16_t AD_value;
-
-char adc_bilgisi[16];
+#include <string.h>
 
 
+char str[50];
+unsigned char ch[50];
 
 int main(){
+	uint16_t AD_value;	int n = 0;
+	char adc_bilgisi[16];
+	unsigned char key; char keystr[20];
 	
-	gpio_init();//Giris Cikilari Ayarla
+	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPCEN | RCC_APB2ENR_IOPBEN;
+	GPIOB->CRH	= 0x33333300 ; 	// pin 10~15 50MHZ Output pushpull
+	GPIOA->CRL	= 0x33;
+	GPIOC->CRL	= 0x3300;
 	delay_init();  //Delay icin konfigurasyonlari yap
 
 	lcd_init();
-	lcd_yaz("  RS232 Testi");
+	lcd_yaz(" RS232 Testi");
 	lcd_gotoxy(2,1);
-	lcd_yaz("USART ");
+	lcd_yaz(" USART ");
 	delay_ms(1500);
 	
 	lcd_clear();
- 	lcd_yaz("Gonderiliyor...");
+ 	lcd_yaz("LedON için L");
  	lcd_gotoxy(2,1);
 	
-	usart_init();
-	printf("0");
+	usart_init();	
 
-/////*********EXS03_configADC*//////////
-	RCC->APB2ENR |= RCC_APB2ENR_ADC1EN | RCC_APB2ENR_IOPCEN ;
-	GPIOC->CRL |= 0xFFFFFF00;	//Pin0|1 AnalogIN			//LDR + POT
-	ADC1->CR1 |= ADC_CR1_SCAN;
-	ADC1->CR2 |= ADC_CR2_CONT | (0UL << 11) | ADC_CR2_EXTTRIG | ADC_CR2_EXTSEL;
-	ADC1->SMPR1 |= ADC_SMPR1_SMP11_0 | ADC_SMPR1_SMP11_2;
-	ADC1->CR2 |= ADC_CR2_ADON;
-	ADC1->CR2 |= ADC_CR2_RSTCAL;
-	while(ADC_GetResetCalibrationStatus(ADC1));
-	ADC1->CR2 |= ADC_CR2_CAL;
-	while(ADC_GetCalibrationStatus(ADC1));
+	adc_init();
 
 	while(1){
-	
-		while(!(ADC1->SR & ADC_SR_EOC));
-		AD_value = ADC1->DR;
-			AD_value=4095-AD_value;
-		printf("%d\r\n",AD_value);
-		sprintf(adc_bilgisi,"  LDR = %4d",AD_value);
-		lcd_gotoxy(2,1);
-		lcd_yaz(adc_bilgisi);
-		delay_ms(50);
+//	
+		key = getch();
+		
+		while (!(USART1->SR & USART_SR_RXNE));
+
+//		ch[n] = USART1->DR;
+//		n++;
+//		
+		
+//		keystr[4] = getch_string();
+//			while((ADC1->SR & ADC_SR_EOC)== ADC_SR_EOC);
+//			AD_value = ADC1->DR;
+//				AD_value=4095-AD_value;
+//			sprintf(adc_bilgisi,"  LDR = %4d",AD_value);
+//			usart_string(adc_bilgisi);
+//			lcd_clear();
+//			lcd_yaz(adc_bilgisi);
+//	   ret = strncmp(keystr, "Led", 4);
+
+		if( key == 'L')
+			{
+					sprintf(str, "\rLed'i actiniz\t\r ");  
+					putch_string(str); 	
+					GPIOA->ODR	|= GPIO_ODR_ODR0; 
+				
+					lcd_clear();
+					lcd_yaz(str);
+					lcd_gotoxy(2,1);
+					sprintf(str, "LedOFF icin bas");
+					lcd_yaz(str);
+			}
+		
+		else if(key == 'A')
+		{
+			while((ADC1->SR & ADC_SR_EOC)== ADC_SR_EOC){};
+			AD_value = ADC1->DR;
+				AD_value=4095-AD_value;
+			sprintf(adc_bilgisi,"  LDR = %4d",AD_value);
+			putch_string(adc_bilgisi);
+			lcd_clear();
+			lcd_yaz(adc_bilgisi);
+		}	
+		else
+			{
+					lcd_clear();
+					putch_string("\rLed OFF\r");
+					GPIOA->BRR	|= GPIO_BRR_BR0;
+					lcd_yaz("LED OFF");
+			}
+		delay_ms(5000);
 	
 	}
 	

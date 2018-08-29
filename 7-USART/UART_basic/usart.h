@@ -25,7 +25,7 @@
 
 
 void usart_init(void);
-char getch(unsigned char value);										//USART_Rx
+char getch(void);										//USART_Rx
 char getch_string(volatile char *st);	//USART_Tx
 void putch(unsigned char);					//USART_TxCh
 void usart_string(const char *st);	//USART_Tx

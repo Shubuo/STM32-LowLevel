@@ -8,7 +8,7 @@ char str[50];
 int main(void){	
 	
 	volatile unsigned long dly;
-	int i = 5000000;
+	int i = 5000000;	char c, ch;
 	
 			RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
 			GPIOC->CRL 		= 0x3000;							//GPIO_CRL_MODE3 | (GPIO_CRL_CNF3&0x0); pc3
@@ -20,15 +20,18 @@ int main(void){
 			i=5000000;
  
 					
-					sprintf(str, "Lorem Ipsum Dolor Sit Amet\t\r");
-					usart_string(str); 	
+//					sprintf(str, "Lorem Ipsum Dolor Sit Amet\t\r");
+//					usart_string(str); 	
+			printf("LED için L'ye basin");
+			scanf("%c",&c);
 			
 			for(;;){
-	//					 if (USART_CR1_RXNEIE)       // If data is received (Receiver Register bosalmistir demek)    
-//						{    
-//							ch = USART1_Rx();     // read the received data								
-//								USART1_TxCh();       // and send data via UART
+						 if (USART_CR1_RXNEIE)       // If data is received (Receiver Register bosalmistir demek)    
+						{    
+							ch = getch();     // read the received data								
+								putch();       // and send data via UART
 //				putch(getch());
+				getch(c);
 
 					
 

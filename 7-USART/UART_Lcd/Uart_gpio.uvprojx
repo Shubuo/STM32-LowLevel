@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\EXPKITS;..\UART_basic;..\UART_Lcd</IncludePath>
+              <IncludePath>..\EXPKITS;..\UART_Lcd</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -394,12 +394,12 @@
             <File>
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\UART_basic\usart.c</FilePath>
+              <FilePath>.\usart.c</FilePath>
             </File>
             <File>
               <FileName>usart.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\UART_basic\usart.h</FilePath>
+              <FilePath>.\usart.h</FilePath>
             </File>
           </Files>
         </Group>

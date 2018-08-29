@@ -118,7 +118,7 @@ void EXS03_enableButtons(void)
 
 void EXS03_configADC(uint8_t adcch)
 {
-    ADC_InitTypeDef ADC_InitStructure;
+//    ADC_InitTypeDef ADC_InitStructure;
     GPIO_InitTypeDef GPIO_InitStructure;
 #ifdef STM32F2XX
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
@@ -147,28 +147,28 @@ void EXS03_configADC(uint8_t adcch)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN; 		//Input
     GPIO_Init(GPIOC, &GPIO_InitStructure);
     /* ADC1 konfigurasyonlari -------------------------*/
-    ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
-    ADC_InitStructure.ADC_ScanConvMode = ENABLE;
-    ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
-    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
-    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-    ADC_InitStructure.ADC_NbrOfChannel = 1;
-    ADC_Init(ADC1, &ADC_InitStructure);
-    /* ADC1 kanal 10'da*/
-    ADC_RegularChannelConfig(ADC1, adcch, 1, ADC_SampleTime_55Cycles5);  /*LDR 11. ADC KANALINDA*/
-    ADC_Cmd(ADC1, ENABLE);
-		ADC_ResetCalibration(ADC1);
-  	while(ADC_GetResetCalibrationStatus(ADC1));
-  	ADC_StartCalibration(ADC1);
-  	while(ADC_GetCalibrationStatus(ADC1));
-		ADC_SoftwareStartConvCmd(ADC1,ENABLE);
+//    ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
+//    ADC_InitStructure.ADC_ScanConvMode = ENABLE;
+//    ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
+//    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
+//    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
+//    ADC_InitStructure.ADC_NbrOfChannel = 1;
+//    ADC_Init(ADC1, &ADC_InitStructure);
+//    /* ADC1 kanal 10'da*/
+//    ADC_RegularChannelConfig(ADC1, adcch, 1, ADC_SampleTime_55Cycles5);  /*LDR 11. ADC KANALINDA*/
+//    ADC_Cmd(ADC1, ENABLE);
+//		ADC_ResetCalibration(ADC1);
+//  	while(ADC_GetResetCalibrationStatus(ADC1));
+//  	ADC_StartCalibration(ADC1);
+//  	while(ADC_GetCalibrationStatus(ADC1));
+//		ADC_SoftwareStartConvCmd(ADC1,ENABLE);
 #endif
 }
 
 /*******************USART1 Konfigurasyonlari*********************/
 void EXS03_initUSART(void)
 {
-	  USART_InitTypeDef USART_InitStructure;
+//	  USART_InitTypeDef USART_InitStructure;
     GPIO_InitTypeDef GPIO_InitStructure;
 #ifdef STM32F2XX
 
@@ -210,16 +210,16 @@ void EXS03_initUSART(void)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
-    USART_InitStructure.USART_BaudRate = 9600; // 9600 baud
-    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-    USART_InitStructure.USART_StopBits = USART_StopBits_1;
-    USART_InitStructure.USART_Parity = USART_Parity_No;
-    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-    /* USART configuration */
-    USART_Init(USART1, &USART_InitStructure);
-    /* Enable USART */
-    USART_Cmd(USART1, ENABLE);
+//    USART_InitStructure.USART_BaudRate = 9600; // 9600 baud
+//    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+//    USART_InitStructure.USART_StopBits = USART_StopBits_1;
+//    USART_InitStructure.USART_Parity = USART_Parity_No;
+//    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+//    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+//    /* USART configuration */
+//    USART_Init(USART1, &USART_InitStructure);
+//    /* Enable USART */
+//    USART_Cmd(USART1, ENABLE);
 #endif
 }
 

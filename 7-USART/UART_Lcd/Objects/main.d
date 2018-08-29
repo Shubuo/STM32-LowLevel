@@ -17,4 +17,5 @@
 .\objects\main.o: ..\EXPKITS\delay.h
 .\objects\main.o: ..\EXPKITS\lcd.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\main.o: ..\UART_basic\usart.h
+.\objects\main.o: usart.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

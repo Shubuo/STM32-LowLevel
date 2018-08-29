@@ -69,7 +69,7 @@ void putch(unsigned char value)
 //}
 	
 /////////     RECEIVER		///////// 
-	char getch(unsigned char value)  //USART1_IRQ HAndler
+	char getch(void)  //USART1_IRQ HAndler
 	{ 
 		while (!(USART1->SR & USART_SR_RXNE));
 //		while(USART_SR_RXNE == 0); 			// Verilerin okunabilmesi için bekle //rx not empty 0 olunca
@@ -77,14 +77,14 @@ void putch(unsigned char value)
 		return ((USART1->DR )); 
 	} 
 	 
-//Send String
-	char getch_string(volatile char *st) // volatile char da kullanilabilir
-	{ 
-	 while(*st != 0) {
-		while(!(USART1->SR	& USART_SR_TC	));
-		getch(*st++);
-	 }
-	} 
+////Send String
+//	char getch_string(volatile char *st) // volatile char da kullanilabilir
+//	{ 
+//	 while(*st != 0) {
+//		while(!(USART1->SR	& USART_SR_RXNE	));
+//		getch(*st++);  
+//	 }
+//	} 
 	
 //	
 //	int GetChar (void)  {

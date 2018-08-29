@@ -1,0 +1,134 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: burak yörük, -, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.25.2.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DCM.DLL V1.17.1.0
+Target DLL:      UL2CM3.DLL V1.160.12.0
+Dialog DLL:      TCM.DLL V1.35.1.0
+ 
+<h2>Project:</h2>
+D:\1-üniversite\Elektronik\Projeler\Skysens\Proje\STM32F10x_StdPeriph_Lib_V3.5.0\Project\STM32F10x_StdPeriph_Template\MDK-ARM\Project.uvprojx
+Project File Date:  07/06/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'STM3210E-EVAL_XL'
+compiling stm32f10x_it.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling main.c...
+compiling misc.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_spi.c...
+compiling stm32f10x_fsmc.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_sdio.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_adc.c...
+compiling stm32f10x_bkp.c...
+compiling stm32f10x_cec.c...
+compiling stm32f10x_can.c...
+compiling stm32f10x_crc.c...
+compiling stm32f10x_dac.c...
+compiling stm32f10x_dbgmcu.c...
+compiling stm32f10x_flash.c...
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(323): error:  #20: identifier "FLASH_KEY1" is undefined
+    FLASH->KEYR = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(324): error:  #20: identifier "FLASH_KEY2" is undefined
+    FLASH->KEYR = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(344): error:  #20: identifier "FLASH_KEY1" is undefined
+    FLASH->KEYR = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(345): error:  #20: identifier "FLASH_KEY2" is undefined
+    FLASH->KEYR = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(358): error:  #20: identifier "FLASH_KEY1" is undefined
+    FLASH->KEYR2 = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(359): error:  #20: identifier "FLASH_KEY2" is undefined
+    FLASH->KEYR2 = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(619): error:  #20: identifier "RDP_Key" is undefined
+    uint16_t rdptmp = RDP_Key;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(634): error:  #20: identifier "FLASH_KEY1" is undefined
+      FLASH->OPTKEYR = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(635): error:  #20: identifier "FLASH_KEY2" is undefined
+      FLASH->OPTKEYR = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(940): error:  #20: identifier "FLASH_KEY1" is undefined
+      FLASH->OPTKEYR = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(941): error:  #20: identifier "FLASH_KEY2" is undefined
+      FLASH->OPTKEYR = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(997): error:  #20: identifier "FLASH_KEY1" is undefined
+      FLASH->OPTKEYR = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(998): error:  #20: identifier "FLASH_KEY2" is undefined
+      FLASH->OPTKEYR = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1059): error:  #20: identifier "FLASH_KEY1" is undefined
+      FLASH->OPTKEYR = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1060): error:  #20: identifier "FLASH_KEY2" is undefined
+      FLASH->OPTKEYR = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1077): error:  #20: identifier "RDP_Key" is undefined
+          OB->RDP = RDP_Key;  
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1129): error:  #20: identifier "FLASH_KEY1" is undefined
+    FLASH->OPTKEYR = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1130): error:  #20: identifier "FLASH_KEY2" is undefined
+    FLASH->OPTKEYR = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1178): error:  #20: identifier "FLASH_KEY1" is undefined
+    FLASH->OPTKEYR = FLASH_KEY1;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1179): error:  #20: identifier "FLASH_KEY2" is undefined
+    FLASH->OPTKEYR = FLASH_KEY2;
+..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c: 0 warnings, 20 errors
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_pwr.c...
+compiling stm32f10x_rtc.c...
+compiling core_cm3.c...
+compiling stm32f10x_wwdg.c...
+compiling stm32f10x_tim.c...
+compiling system_stm32f10x.c...
+compiling stm32_eval.c...
+compiling stm32_eval_i2c_tsensor.c...
+compiling stm32_eval_sdio_sd.c...
+compiling stm32_eval_spi_flash.c...
+compiling stm3210e_eval_fsmc_sram.c...
+compiling stm3210e_eval_lcd.c...
+compiling stm3210e_eval_fsmc_nor.c...
+assembling startup_stm32f10x_xl.s...
+compiling stm3210e_eval_fsmc_nand.c...
+".\STM3210E-EVAL_XL\STM3210E-EVAL_XL.axf" - 20 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.1.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.2.0.pack
+                Keil.STM32F1xx_DFP.2.2.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_STM3210E-EVAL_XL
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.1.1
+Target not created.
+Build Time Elapsed:  00:00:09
+</pre>
+</body>
+</html>

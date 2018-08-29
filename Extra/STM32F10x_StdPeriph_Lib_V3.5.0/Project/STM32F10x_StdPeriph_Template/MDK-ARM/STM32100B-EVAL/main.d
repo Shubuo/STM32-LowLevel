@@ -31,3 +31,6 @@
 .\stm32100b-eval\main.o: ..\..\..\Utilities\STM32_EVAL\stm32_eval.h
 .\stm32100b-eval\main.o: ..\..\..\Utilities\STM32_EVAL\stm32100b_eval/stm32100b_eval.h
 .\stm32100b-eval\main.o: ..\..\..\Utilities\STM32_EVAL\stm32_eval.h
+.\stm32100b-eval\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\stm32100b-eval\main.o: ..\..\EXPKITS\lcd.h
+.\stm32100b-eval\main.o: ..\..\EXPKITS\delay.h

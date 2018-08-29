@@ -29,3 +29,6 @@
 .\stm32100b-eval\stm32f10x_it.o: ..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\stm32100b-eval\stm32f10x_it.o: ..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\stm32100b-eval\stm32f10x_it.o: ..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
+.\stm32100b-eval\stm32f10x_it.o: ..\..\..\Utilities\STM32_EVAL\stm32_eval.h
+.\stm32100b-eval\stm32f10x_it.o: ..\..\..\Utilities\STM32_EVAL\stm32100b_eval/stm32100b_eval.h
+.\stm32100b-eval\stm32f10x_it.o: ..\..\..\Utilities\STM32_EVAL\stm32_eval.h

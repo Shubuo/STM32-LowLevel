@@ -219,8 +219,6 @@ Compare the major ARM processor families available today
 from the points of view of processing power, cost, applications.
 (Hint: focus on ARM11 and ARM Cortex series processors)
 
--ARM Project 1/2 yap
-
 
 RTC
 
