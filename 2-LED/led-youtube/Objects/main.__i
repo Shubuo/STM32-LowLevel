@@ -1,8 +1,0 @@
--c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\led2
--I"D:\Belgeler\Elektronik\Projeler\Emronic staj\Programming\LED\led-youtube\RTE"
--I"D:\Belgeler\Elektronik\Projeler\Emronic staj\Programming\LED\led-youtube\RTE\Device\STM32F103R8"
--IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include
--IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
--IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\StdPeriph_Driver\inc
--D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_MD -DSTD_PERIPH_DRIVER -DSTM32F1XX -DHSE_VALUE="8000000"
--o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d "main.c"

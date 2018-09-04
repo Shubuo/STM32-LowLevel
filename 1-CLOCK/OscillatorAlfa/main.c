@@ -3,7 +3,7 @@
 
 int main()
 {
-	RCC->CR |= ((uint32_t)RCC_CR_HSION);                     // Enable HSI
+	RCC->CR |= ((uint32_t)RCC_CR_HSION);                    // Enable HSI
   while ((RCC->CR & RCC_CR_HSIRDY) == 0);                  // Wait for HSI Ready
 
   RCC->CFGR = RCC_CFGR_SW_HSI;                             // HSI is system clock
@@ -35,8 +35,8 @@ int main()
 	
 	
 	RCC->APB2ENR |=  RCC_APB2ENR_IOPCEN;  //1 <<  4;                    /* Enable GPIOC clock          */
-  GPIOC->CRL   |=  GPIO_CRL_MODE2 ;// GPIO_CRL_CNF -> 00 ;   /* Configure the GPIO for LEDs */
-  GPIOC->ODR	|= GPIO_ODR_ODR2;  // (1 << 2) | 0x04;
+	GPIOC->CRL   |=  GPIO_CRL_MODE2 ;// GPIO_CRL_CNF -> 00 ;   /* Configure the GPIO for LEDs */
+	GPIOC->ODR	|= GPIO_ODR_ODR2;  // (1 << 2) | 0x04;
 
 	
 	while(1);

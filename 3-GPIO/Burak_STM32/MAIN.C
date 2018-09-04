@@ -14,7 +14,7 @@
  
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
-#include "gpio_by.h" /* Expkits EXS-03 Development Kit Header File */
+#include "gpio_by.h" 	/* Expkits EXS-03 Development Kit Header File */
 #include "delay.h"
 #include "lcd.h"
 
@@ -24,23 +24,24 @@ u32 temp=0;
 /*************************Ana Program*************************/
 int main(void)
 {
-    BY_initGPIO();//Giris Cikilari Ayarla
-    delay_init();  //Delay icin konfigurasyonlari yap
+    BY_initGPIO();	//Giris Cikilari Ayarla
+    delay_init();  	//Delay icin konfigurasyonlari yap
     GPIO_ResetBits(GPIOC , GPIO_Pin_8);	 // Buzzer Sussun
 	
-	/*	lcd_init();
+	 lcd_init();
     lcd_yaz("Selam Burak");
     lcd_gotoxy(2,1);
-    lcd_yaz("Uyudun mu ?");
+    lcd_yaz("LCD Hazir");
     delay_ms(400);
     lcd_gotoxy(2,1);
-    lcd_yaz("                ");*/
+    lcd_yaz("                ");
+	
     while (1)
     {
         temp+=3;
-        delay_ms(temp);
+			delay_ms(temp);
        while(kont--)BUZZER(1);
-       delay_ms(temp);
+			delay_ms(temp);
        while(kont--)BUZZER(0);
         lcd_gotoxy(2,(unsigned char) (temp/7) +1);
         lcd_yaz("*");
