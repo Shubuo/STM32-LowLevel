@@ -1,3 +1,6 @@
+/*
+		AYni islemcide olmadi kardas WAAAy ?
+*/
 #include "stm32f10x.h"                  // Device header
 
 typedef enum {FAILED = 0, PASSED = !FAILED} TestStatus;
@@ -28,26 +31,31 @@ int main ()
 	/* PCLK2 = HCLK/2 */
 	RCC->CFGR |= 0x00000400 << 3;
 
-  /* Enable SPI1/2 clock and GPIO A/B */
-	RCC-> APB2ENR 	|= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_SPI1EN ;
+  /* Enable SPI1/2 clock and GPIO A/B/C */
+	RCC-> APB2ENR 	|= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_SPI1EN | RCC_APB2ENR_IOPCEN ;
 	RCC-> APB1ENR	|= RCC_APB1ENR_SPI2EN;
 		
 		//GPIO COnfiguration
 	/* Configure SPI_MASTER pins: SCK and MOSI, MISO in pin6 */
-	  GPIOA->CRL |= 0xB4B00000 ;	// else 0x4B400000 pin5-7 input floating, pin6 Master
+	  GPIOA->CRL = 0xB4B00000 ;	//pin 5-7 AF_PP, pin 6 IN_Floating // else 0x4B400000 pin5-7 input floating, pin6 Master
 
 	/* Configure SPI_SLAVE pins: SCK and MOSI, MISO in pin14 */
-	  GPIOB->CRH |= 0x4B400000 ;	//	else 0xB4B00000 pin 13-15 AF PP, pin 14 Floating In
+	  GPIOB->CRH = 0x4B400000 ;	//	else 0xB4B00000 pin 13-15 AF PP, pin 14 Floating In
 	  
+		GPIOC->CRL = 0x3300;	// Pin 2-3 OUT_PP
+		
 	 //SPI1 Config
 		SPI1->CR1 |= (SPI_CR1_BIDIMODE&0x0) | SPI_CR1_MSTR | (SPI_CR1_DFF&0x0) | (SPI_CR1_CPOL&0x0) | SPI_CR1_CPHA ;
 		SPI1->CR1 |= SPI_CR1_BR_0 | SPI_CR1_LSBFIRST ;
-		SPI1->CRCPR	|= SPI_CRCPR_CRCPOLY & 0x111 ; //RESET Value is actually 7 also (same)
-		
-	 //SPI2 Config
-		SPI2->CR2 |= (SPI_CR1_MSTR & 0x0);
+		SPI1->CRCPR	|= SPI_CRCPR_CRCPOLY & 0x7 ; //RESET Value is actually 7 also (same)
 		
 		SPI1->CR1 |= SPI_CR1_SPE;		//ENABLE
+	 
+	 //SPI2 Config
+		SPI2->CR1 |= (SPI_CR1_MSTR & 0x0);
+		SPI2->CR1 |=	SPI_CR1_CPHA | SPI_CR1_LSBFIRST |SPI_CR1_BR_0 ;
+		
+
 		SPI2->CR1 |= SPI_CR1_SPE;
 
  /* Transfer procedure */
@@ -84,13 +92,18 @@ TestStatus Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength
   {
     if (*pBuffer1 != *pBuffer2)
     {
+		GPIOC->BRR = 0xC;
+//	 GPIOC->BSRR = 0xC << 16;
+
       return FAILED;
     }
 
     pBuffer1++;
     pBuffer2++;
   }
-
+	
+	GPIOC->BSRR = 0xC;
+  
   return PASSED;
 }
 
