@@ -12,7 +12,7 @@ void i2c_init()
 	 I2C1->CR2 		|= 36;								//0x101010	36 MHz APB1 Hattiniz frekansi 
 	 I2C1->CCR 		|= 180;							//	Standard Mode + Clock Control=180 (Thigh =Tpclk1(27,7ns)*180 = 5us)
 	 I2C1->TRISE	 = 37;								// (1000ns/Tpclk) + 1 
-	 I2C1->OAR1 	|= (I2C_OAR1_ADDMODE/2) ;	//7-bit adresleme
+	 I2C1->OAR1 	|= (I2C_OAR1_ADDMODE&0x00) ;	//7-bit adresleme
 	 I2C1->CR1		|= I2C_CR1_PE;						// PE = 1
 	
  
@@ -22,7 +22,7 @@ void i2c_init()
 
 	 GPIOB->CRL |= 0xEEFFFFFF ;
 
-//	Bu islemler tek pin için olusturuluyor diger pinlerile birlikte hata veriyor.
+//	ARM kütüphanesi islemler için tek pin için olusturuluyor diger pinlerile birlikte hata veriyor.
 //  GPIO_PinConfigure(I2C_GPIO,6,GPIO_AF_OPENDRAIN,GPIO_MODE_OUT2MHZ);	// I2C SCL
 //	 GPIO_PinConfigure(I2C_GPIO,7,GPIO_AF_OPENDRAIN,GPIO_MODE_OUT2MHZ);	//I2C1 SDA
 	 
