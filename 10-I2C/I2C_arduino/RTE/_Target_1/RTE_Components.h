@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'i2c_arduino' 
+ * Project: 'i2c_ard' 
  * Target:  'Target 1' 
  */
 
@@ -16,5 +16,6 @@
  */
 #define CMSIS_device_header "stm32f10x.h"
 
+#define RTE_DEVICE_STDPERIPH_FRAMEWORK
 
 #endif /* RTE_COMPONENTS_H */
