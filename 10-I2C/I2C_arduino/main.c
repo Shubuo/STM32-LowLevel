@@ -4,9 +4,9 @@
 *
 */
 
-#include "stm32f10x.h"
+//#include "stm32f10x.h"
 #include "delay.h"
-#include "misc.h"                       // Keil::Device:StdPeriph Drivers:Framework
+//#include "misc.h"                       // Keil::Device:StdPeriph Drivers:Framework
 #include "i2c_lib.h"
 
 void SysTick_Handler(void) ;
@@ -27,7 +27,7 @@ int main(void)
     {
         // Write 0x01 to slave (turn on LED blinking)
         i2c_write(SLAVE_ADDRESS, 0x01);
-        delay_nms(5);
+        delay_nms(500);
         // Read LED blinking status (off/on)
         i2c_read(SLAVE_ADDRESS, &receivedByte);
         // Display LED blinking status

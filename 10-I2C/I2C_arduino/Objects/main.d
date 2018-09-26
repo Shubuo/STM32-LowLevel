@@ -1,4 +1,5 @@
 .\objects\main.o: main.c
+.\objects\main.o: delay.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\stm32f10x.h
 .\objects\main.o: .\RTE\_Target_1\RTE_Components.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm3.h
@@ -10,5 +11,4 @@
 .\objects\main.o: .\RTE\Device\STM32F103R8\stm32f10x_conf.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\stm32f10x.h
-.\objects\main.o: delay.h
 .\objects\main.o: i2c_lib.h

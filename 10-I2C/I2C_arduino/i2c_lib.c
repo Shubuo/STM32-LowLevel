@@ -44,6 +44,9 @@ void i2c_read(uint8_t address, uint8_t* data)
     i2c_stop();
 }
 
+
+
+
 void i2c_start()
 {
 	 // Wait until I2Cx is not busy anymore
@@ -61,13 +64,9 @@ void i2c_start()
 
 }
 
-void i2c_stop()
-{
-    // Generate I2C stop condition
-    I2C1->CR1 |= I2C_CR1_STOP;
-    // Wait until I2C stop condition is finished
-    while ((I2C1->SR2 & I2C_SR1_STOPF) != RESET);	
-}
+
+
+
 
 void i2c_address_direction(uint8_t address, uint8_t direction)
 {
@@ -77,12 +76,12 @@ void i2c_address_direction(uint8_t address, uint8_t direction)
   if (direction != 0x0)
   {
     /* Set the address bit0 for read */
-    address |= I2C_OAR1_ADD0;				//I2C_OAR1_ADD0_Set
+    address |= I2C_OAR1_ADD0;				//I2C_OAR1_ADD0_Set  //adres + add0 = read
   }
   else
   {
     /* Reset the address bit0 for write */
-    address &= (0xFFFF-I2C_OAR1_ADD0);	//I2C_OAR1_ADD0_Reset
+    address &= (0xFFFF-I2C_OAR1_ADD0);	//I2C_OAR1_ADD0_Reset  //sadece adres degeri döner
   }
   /* Send the address */
   I2C1->DR = address;
@@ -107,6 +106,8 @@ void i2c_address_direction(uint8_t address, uint8_t direction)
 
 
 
+
+
 void i2c_transmit(uint8_t byte)
 {
     // Send data byte
@@ -121,6 +122,8 @@ void i2c_transmit(uint8_t byte)
 
 }
 
+
+// Tek bit ver igönderildigi için ack(data kabul) kuulanilmiyor direk nack kullaniliyor.
 uint8_t i2c_receive_ack()
 {
     // Enable ACK of received data
@@ -135,6 +138,9 @@ uint8_t i2c_receive_ack()
     // Read and return data byte from I2C data register
     return (I2C1->DR);
 }
+
+
+
 
 uint8_t i2c_receive_nack()
 {
@@ -151,6 +157,22 @@ uint8_t i2c_receive_nack()
     // Read and return data byte from I2C data register
     return (I2C1->DR);
 }
+
+
+
+
+void i2c_stop()
+{
+    // Generate I2C stop condition
+    I2C1->CR1 |= I2C_CR1_STOP;
+    // Wait until I2C stop condition is finished
+    while ((I2C1->SR2 & I2C_SR1_STOPF) != RESET);	
+}
+
+
+
+
+
 
 
 ErrorStatus I2C_CheckEvent(I2C_TypeDef* I2C, uint32_t I2C_EVENT)

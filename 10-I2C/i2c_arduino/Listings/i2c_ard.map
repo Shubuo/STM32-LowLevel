@@ -491,9 +491,9 @@ Image Symbol Table
     i2c_stop                                 0x080005c1   Thumb Code    30  i2c_lib.o(i.i2c_stop)
     i2c_transmit                             0x080005e5   Thumb Code    26  i2c_lib.o(i.i2c_transmit)
     i2c_write                                0x08000609   Thumb Code    32  i2c_lib.o(i.i2c_write)
-    main                                     0x08000629   Thumb Code    72  main.o(i.main)
-    Region$$Table$$Base                      0x08000674   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000694   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08000629   Thumb Code    74  main.o(i.main)
+    Region$$Table$$Base                      0x08000678   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000698   Number         0  anon$$obj.o(Region$$Table)
     receivedByte                             0x20000004   Data           1  main.o(.data)
     SystemCoreClock                          0x20000008   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x2000000c   Data          16  system_stm32f10x.o(.data)
@@ -508,9 +508,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x000006b0, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000006b4, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000694, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000698, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -589,26 +589,26 @@ Memory Map of the image
     0x080005c0   0x080005c0   0x00000024   Code   RO           99    i.i2c_stop          i2c_lib.o
     0x080005e4   0x080005e4   0x00000024   Code   RO          100    i.i2c_transmit      i2c_lib.o
     0x08000608   0x08000608   0x00000020   Code   RO          101    i.i2c_write         i2c_lib.o
-    0x08000628   0x08000628   0x0000004c   Code   RO          178    i.main              main.o
-    0x08000674   0x08000674   0x00000020   Data   RO          467    Region$$Table       anon$$obj.o
+    0x08000628   0x08000628   0x00000050   Code   RO          178    i.main              main.o
+    0x08000678   0x08000678   0x00000020   Data   RO          467    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000694, Size: 0x0000001c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000698, Size: 0x0000001c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000694   0x00000004   Data   RW            9    .data               delay.o
-    0x20000004   0x08000698   0x00000001   Data   RW          179    .data               main.o
-    0x20000005   0x08000699   0x00000003   PAD
-    0x20000008   0x0800069c   0x00000014   Data   RW          269    .data               system_stm32f10x.o
+    0x20000000   0x08000698   0x00000004   Data   RW            9    .data               delay.o
+    0x20000004   0x0800069c   0x00000001   Data   RW          179    .data               main.o
+    0x20000005   0x0800069d   0x00000003   PAD
+    0x20000008   0x080006a0   0x00000014   Data   RW          269    .data               system_stm32f10x.o
 
 
-    Execution Region ER_ZI (Exec base: 0x2000001c, Load base: 0x080006b0, Size: 0x00000664, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x2000001c, Load base: 0x080006b4, Size: 0x00000664, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x2000001c        -       0x00000060   Zero   RW          341    .bss                c_w.l(libspace.o)
-    0x2000007c   0x080006b0   0x00000004   PAD
+    0x2000007c   0x080006b4   0x00000004   PAD
     0x20000080        -       0x00000200   Zero   RW          256    HEAP                startup_stm32f10x_md.o
     0x20000280        -       0x00000400   Zero   RW          255    STACK               startup_stm32f10x_md.o
 
@@ -622,12 +622,12 @@ Image component sizes
 
        172         26          0          4          0     233907   delay.o
        488         66          0          0          0       4784   i2c_lib.o
-        84          4          0          1          0       1072   main.o
+        88          6          0          1          0       1072   main.o
         64         26        236          0       1536        816   startup_stm32f10x_md.o
        328         28          0         20          0       2429   system_stm32f10x.o
 
     ----------------------------------------------------------------------
-      1136        150        268         28       1536     243008   Object Totals
+      1140        152        268         28       1536     243008   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          3          0          0   (incl. Padding)
 
@@ -676,15 +676,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1416        166        268         28       1636     242652   Grand Totals
-      1416        166        268         28       1636     242652   ELF Image Totals
-      1416        166        268         28          0          0   ROM Totals
+      1420        168        268         28       1636     242652   Grand Totals
+      1420        168        268         28       1636     242652   ELF Image Totals
+      1420        168        268         28          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1684 (   1.64kB)
+    Total RO  Size (Code + RO Data)                 1688 (   1.65kB)
     Total RW  Size (RW Data + ZI Data)              1664 (   1.63kB)
-    Total ROM Size (Code + RO Data + RW Data)       1712 (   1.67kB)
+    Total ROM Size (Code + RO Data + RW Data)       1716 (   1.68kB)
 
 ==============================================================================
 
